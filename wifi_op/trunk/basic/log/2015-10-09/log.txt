@@ -234,3 +234,6 @@
 [2015-10-09 12:12:09] user::11 GET /project/wifi/wifi_op/trunk/basic/web/index.php?r=auth%2Frole  params::a:0:{} 
 [2015-10-09 12:12:09] user::11 GET /project/wifi/wifi_op/trunk/basic/web/index.php?r=auth%2Fpermission  params::a:0:{} 
 [2015-10-09 12:12:10] user::11 GET /project/wifi/wifi_op/trunk/basic/web/index.php?r=auth%2Fuserlist  params::a:0:{} 
+[2015-10-09 12:24:45] user::11 GET /project/wifi/wifi_op/trunk/basic/web/index.php?r=auth%2Frole  params::a:0:{} 
+[2015-10-09 12:24:47] user::11 GET /project/wifi/wifi_op/trunk/basic/web/index.php?r=auth%2Fpermission  params::a:0:{} 
+[2015-10-09 13:02:24] user::11 GET /project/wifi/wifi_op/trunk/basic/web/index.php?r=article%2Findex  params::a:0:{} 
