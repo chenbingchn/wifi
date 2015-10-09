@@ -14,5 +14,18 @@
 		public function view() {
 			$this->load->view('prize/view');
 		}
+		public function wait() {
+			$this->load->view('prize/wait');
+		}
+		public function id() {
+			$data['award'] = $this->award_model->get_award();
+			$this->lang->load('award', 'indonesian');
+			$this->load->view('prize/multilang', $data);
+		}
+		public function en() {
+			$data['award'] = $this->award_model->get_award();
+			$this->lang->load('award', 'english');
+			$this->load->view('prize/multilang', $data);
+		}
 	}
 ?>

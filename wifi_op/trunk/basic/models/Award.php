@@ -42,10 +42,11 @@ class Award extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'mobile' => 'Mobile',
-            'award_type_en' => 'Award Type En',
-            'award_type_id' => 'Award Type ID',
-            'award_type_zh' => 'Award Type Zh',
+            'mobile' => '手机号码',
+            'award_type' => '中奖类型id',
+            'award_type_en' => '中奖类型（英语）',
+            'award_type_id' => '中奖类型（印尼语）',
+            'award_type_zh' => '中奖类型（中文）',
         ];
     }
 }
