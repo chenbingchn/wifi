@@ -1,0 +1,157 @@
+<?php
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+?>
+<html>
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            body{
+                margin: 0px;
+                padding: 0px;
+                font-family: 微软雅黑;
+                background: #F5F5F5
+            }
+            a{
+                text-decoration: none;
+                color: black;
+            }
+            .nav{
+                position: fixed;
+                top:0px;
+                background: #329519;
+                height: 46px;
+                width: 100%;
+                text-align: center;
+                line-height: 46px;
+                font-size: 20px;
+                color: white;
+                font-family: 微软雅黑;
+            }
+            .left_icon{
+                float: left;
+                padding-left: 3px;
+                padding-top: 8px;
+            }
+            .activity{
+                /*background: white;*/
+                margin-top: 10px;
+            }
+            .activity-item{
+                margin-top: 10px;
+                background: white;
+            }
+            .activity-item .left-item{
+                width: 35%;
+                /*width: 30%;*/
+                /*float: left;*/
+                vertical-align: middle;
+                display: inline-block;
+                /*height: 80px;*/
+            }
+            .activity-item .center-item{
+                width: 40%;
+                vertical-align: middle;
+                display: inline-block;
+            }
+            .activity-item .right-item{
+                width: 20%;
+                vertical-align: middle;
+                display: inline-block;
+                color:#E8A76E
+            }
+            .activity-item .left-item img{
+                display: block;
+                margin: 5% auto;
+                /*height: 70px;*/
+                width: 90%;
+            }
+            .activity-item .center-item{
+                font-size: 12px;
+                text-align: center;
+            }
+            .activity-item .center-item .text-container{
+                padding-top: 10px;
+                padding-bottom: 10px;
+                text-align: left;
+                text-align: justify
+            }
+            .right-item .button{
+                width: 90%;
+                background: #1c8a00;
+                text-align: center;
+                color: #FAFAFA;
+                font-size: 14px;
+                border-radius: 3px;
+                margin: 0px auto;
+                height: 40px;
+                line-height: 40px;
+            }
+            .record_tips{
+                padding-top: 40%;
+                color: #999;
+                font-size: 18px;  
+            }
+            .record_tips a{
+                color: #F86800;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="nav">
+            <div class="left_icon" ><a href="<?= Yii::$app->urlManager->createUrl(['pointmall/index', 'user_id' => $user_id, 'imei' => $imei, 'access_token' => $access_token]) ?>"><img id="left" src="images/Left.png" height="30" /></a></div>
+            Exchange history
+        </div>
+        <div style="height:46px;"></div>
+        <?php if ($record): ?>
+            <div class="activity">
+                <?php foreach ($record as $v): ?>
+                    <div class="activity-item">
+                        <div class="left-item">
+                            <a href="<?= Yii::$app->urlManager->createUrl(['pointmall/detail', 'id' => $v->good->id, 'user_id' => $user_id, 'imei' => $imei, 'access_token' => $access_token]) ?>"><img src="<?= $v->good->img_url ?>"/></a>
+                        </div>
+                        <div class="center-item">
+                            <div class="text-container">
+                                <div style="font-size:14px"><?= $v->good->Title ?></div>
+                                <div style="color:#999;margin-top: 5px;">
+                                    <?php
+                                    if (mb_strlen($v->good->Content) > 30) {
+                                        echo mb_substr($v->good->Content, 0, 30) . ".....";
+                                    } else {
+                                        echo $v->good->Content;
+                                    }
+                                    ?>
+                                </div>
+                                <div style="color:#999;margin-top: 5px;">
+                                    <div style="height:23px;margin-left:3px;line-height: 23px;">Time:<?= $v->buy_date ?></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right-item" style="text-align: center">
+                            $<?= $v->bargin_points ?>
+                        </div>
+                        <div style="clear: both"></div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        <?php else: ?>
+            <div class=" container record_tips"> 当前兑换记录为空，大量惊喜礼品正在折扣出售，前往 <a  href="<?= Yii::$app->urlManager->createUrl(['pointmall/index', 'user_id' => $user_id, 'imei' => $imei, 'access_token' => $access_token]) ?>">Point Mall</a> 查看</div>
+        <?php endif; ?>
+        <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+        <script src="js/jquery.min.js" type="text/javascript"></script>
+        <script src="js/bootstrap.min.js" type="text/javascript"></script>
+        <script type="text/javascript">
+//            $(function() {
+//                $('.left_icon').on('click', function() {
+//                    window.location.href = "backapp://back";
+//                });
+//            });
+        </script>
+    </body>
+</html>
+

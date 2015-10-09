@@ -1,0 +1,80 @@
+html,body,p,img,ol,li,ul {
+    margin:0;
+    padding:0;
+}
+html {
+    -webkit-text-size-adjust:none;
+}
+body {
+    font-family: "Microsoft YaHei",Arial,Helvetica,sans-serif;
+    min-width: 300px;
+    max-width: 640px;
+    margin: 0 auto;
+    text-align: center;
+    color: #fff;
+}
+#page_center {
+    background: url(../../images/prize/bg_top.jpg) top no-repeat,
+                url(../../images/prize/bg_center.jpg) bottom repeat-y;
+    background-size: contain;
+    position: relative;
+    margin-top: -50px;
+    z-index: -1;
+}
+#prize_content {
+    width: 80%;
+    text-align: left;
+    margin: 0 auto;
+    padding: 20px 20px 10px 60px;
+    position: relative;
+    padding-top: 65%;
+}
+p#title {
+    font-size: 10px;
+}
+p.prize_title {
+    font-size: 13px;
+    margin: 10px auto;
+}
+p.mobile_list {
+    list-style: none;
+}
+ul.mobile_list li {
+    display: inline-block;
+    width: 30%;
+    font-size: 12px;
+    padding-left: 8%;
+    line-height: 25px;
+}
+.clearfix {
+    clear: both;
+}
+#page_bottom {
+   background: url(../../images/prize/bg_bottom.jpg);
+   background-size: 100% 100%;
+}
+#page_bottom #bottom_content {
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 50px;
+   
+}
+#page_bottom #left_text {
+     width: 65%;
+     float: left;
+  }
+#page_bottom #left_text p {
+    font-size: 12px;
+    text-align: justify;
+}
+#page_bottom #right_pic {
+    width: 35%;
+    float: right;
+}
+#right_pic img {
+    width: 80%;
+}
+#page_bottom a:link {
+    color: #f6e011;
+    text-decoration: none;
+}

@@ -1,0 +1,41 @@
+<?php
+
+namespace app\Controllers;
+
+use yii\web\Controller;
+use app\models\Account;
+use app\models\IntegralCategory;
+
+class PointmallController extends Controller {
+
+    public $layout = false;
+
+    public function actionIndex() {
+//        $user_id = '621524069728260096';
+        $user_id = isset($_GET['user_id'])?$_GET['user_id']:null;
+        $imei = isset($_GET['imei'])?$_GET['imei']:null;
+        $access_token =  isset($_GET['access_token'])?$_GET['access_token']:null;
+        $integral_cate = IntegralCategory::getCatecory();
+        unset($integral_cate[0]);
+        $user =null;
+        if($user_id){
+            $user = Account::find()->where('user_id =' . $user_id)->one();
+        }
+        return $this->render('index', array(
+                    'user' => $user,
+                    'integral_cate' => $integral_cate,
+                    'user_id'=>$user_id,
+                    'imei'=>$imei,
+                    'access_token'=>$access_token
+        ));
+    }
+
+    public function actionHistory() {
+        return $this->render('history');
+    }
+    
+    public function actionDetail(){
+        return $this->render('detail');
+    }
+
+}

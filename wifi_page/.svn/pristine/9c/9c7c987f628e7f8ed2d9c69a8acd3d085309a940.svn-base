@@ -1,0 +1,10 @@
+<?php
+
+	$lang['title'] = 'Find Free Wifi';
+	$lang['p1'] = 'Just click the Free WiFi with orange key to connect.';
+	$lang['p2'] ='If there is no Free WiFi like that, click Map for more hotspots. Search WiFi with key and click for more detail. Then move to there and try to connect.';
+	$lang['p3'] = 'Still no Free WiFi! Because no one has ever shared WiFi nearby. Just Share to be the first Sharer. By the way, share WiFi could also earn voucher pulsa for you. <a href="http://wifiweb.enmonet.com/wifi_page/trunk/web/index.php?c=share">How to share?</a>';
+	$lang ['img1'] = 'images/find_en_1.jpg';
+	$lang ['img2'] = 'images/find_en_2.jpg';
+	$lang['button'] = 'Share WiFi Now';
+?>

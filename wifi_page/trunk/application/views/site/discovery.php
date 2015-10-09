@@ -1,0 +1,38 @@
+<div class="container">
+    <div id="nav">
+        <div class="nav">
+            <ul>
+                <li class="cur"><span>Apps</span></li>
+                <li><a href="javascript:window.intent.showWeb('http://m.detik.com/', 'News')">News</a></li>
+                <li><a href="javascript:window.intent.showWeb('http://m.kapanlagi.com/', 'Fun')">Fun</a></li>
+                <li><a href="javascript:window.intent.showWeb('http://wifipage.enmonet.com/site/eladies/', 'Girls')">Girls</a></li>
+                <li><a href="javascript:window.intent.showWeb('http://www.9game.com/', 'Games')">Games</a></li>
+            </ul>
+            <div class="nav-line"></div>
+        </div>
+    </div>
+
+    <div>
+        <iframe src="http://www.9apps.com/?app=99991" width="100%" height="100%" frameborder="0"  scrolling="auto" style="position: absolute; height: 100%; border: none"></iframe>
+    </div>
+</div>
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66242547-2', 'auto');
+    ga('send', 'pageview');
+</script>
+<?php
+if (count($ban) && isset($_GET['v']) && $_GET['v'] >= 206) {
+    echo '<div class="banners swiper-container"><div class="swiper-wrapper">';
+    foreach($ban as $k => $v) {
+        echo '<div class="swiper-slide swiper-no-swiping"><a href="javascript:window.intent.showWeb(\'' . $v->url . '\')"><img src="' . $v->pic_url . '" style="width:100%;"></a></div>';
+    }
+    echo '</div><img class="close-btn" src="'.$this->config->base_url().'images/discovery/close.png" width="30" height="30"></div>';
+}
+?>
+<script type="text/javascript" src= <?php echo '"'.config_item('base_url') .'js/lib/swiper.min.js"' ?></script>
+<script>new Swiper ('.swiper-container', {autoplay:3000});</script>

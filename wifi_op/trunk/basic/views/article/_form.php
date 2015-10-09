@@ -1,0 +1,42 @@
+<?php
+
+use yii\helpers\Html;
+use yii\widgets\ActiveForm;
+
+/* @var $this yii\web\View */
+/* @var $model app\Models\Article */
+/* @var $form yii\widgets\ActiveForm */
+$name=Yii::$app->user->identity->username;
+?>
+
+<div class="article-form">
+
+    <?php $form = ActiveForm::begin(); ?>
+
+    <?=$form->field($model, 'user_name')->hiddenInput(['value'=>$name])?>
+
+    <div><?=$name?></div>
+
+    <?= $form->field($model, 'integral')->textInput(['maxlength' => 20]) ?>
+
+    <?= $form->field($model, 'title')->textInput(['maxlength' => 20]) ?>
+
+    <?= $form->field($model, 'titlezh')->textInput(['maxlength' => 20]) ?>
+
+    <?= $form->field($model, 'titleyn')->textInput(['maxlength' => 20]) ?>
+
+    <?= $form->field($model, 'Content')->textInput(['maxlength' => 100]) ?>
+
+    <?= $form->field($model, 'Contentzh')->textInput(['maxlength' => 100]) ?>
+
+    <?= $form->field($model, 'Contentyn')->textInput(['maxlength' => 100]) ?>
+    
+    <?= $form->field($model, 'minVersion')->textInput()->hint('example:版本号2.0.7,填写为207') ?>
+
+    <div class="form-group">
+        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+    </div>
+
+    <?php ActiveForm::end(); ?>
+
+</div>

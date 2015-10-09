@@ -1,0 +1,47 @@
+<?php
+
+use yii\helpers\Html;
+use yii\widgets\ActiveForm;
+use app\models\Award;
+/* @var $this yii\web\View */
+/* @var $model app\models\Award */
+/* @var $form yii\widgets\ActiveForm */
+?>
+
+<div class="award-form">
+
+    <?php $form = ActiveForm::begin(); ?>
+    <?= $form->field($model, 'mobile')->textInput(['maxlength' => 11]) ?>
+
+    <?=$form->field($model, 'award_type')
+        ->dropdownList(Award::find()->select(['award_type', 'award_type'])->indexBy('award_type')->column(),
+            ['prompt'=>'Selec'])?>
+
+    <?=$form->field($model, 'award_type_en')
+        ->dropdownList(Award::find()->select(['award_type_en', 'award_type'])->indexBy('award_type')->column(),
+            ['prompt'=>'Select'])?>
+
+    <?=$form->field($model, 'award_type_id')
+        ->dropdownList(Award::find()->select(['award_type_id', 'award_type'])->indexBy('award_type')->column(),
+            ['prompt'=>'Select'])?>
+
+    <?=$form->field($model, 'award_type_zh')
+        ->dropdownList(Award::find()->select(['award_type_zh', 'award_type'])->indexBy('award_type')->column(),
+            ['prompt'=>'Select'])?>
+
+
+<!--    --><?//= $form->field($model, 'award_type')->textInput(['maxlength' => 2, 'id' => 'type_code', 'onblur'=>"autoValue()"]) ?>
+<!---->
+<!--    --><?//= $form->field($model, 'award_type_en')->textInput(['maxlength' => 50, 'id' => 'type_en', 'onblur'=>"autoValue()"]) ?>
+<!---->
+<!--    --><?//= $form->field($model, 'award_type_id')->textInput(['maxlength' => 50, 'id' => 'type_id', 'onblur'=>"autoValue()"]) ?>
+<!---->
+<!--    --><?//= $form->field($model, 'award_type_zh')->textInput(['maxlength' => 50, 'id' => 'type_zh', 'onblur'=>"autoValue()"]) ?>
+
+    <div class="form-group">
+        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+    </div>
+
+    <?php ActiveForm::end(); ?>
+
+</div>

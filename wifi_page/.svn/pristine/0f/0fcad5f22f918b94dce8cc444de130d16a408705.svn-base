@@ -1,0 +1,28 @@
+$(function(){
+    $('.nav li').on('click',function(){
+        var navLine = $('.nav-line'),
+            w =$(this).width(),
+            left  = $(this).position().left;
+        navLine.animate({'width':w,'left':left},100);
+    });
+});
+
+function button(k,cot){
+    for(i=0;i<cot;i++){
+        if(i != k){
+            $('#cat'+i).hide();
+            $('#icon'+i).removeClass("glyphicon-chevron-up");
+            $('#icon'+i).addClass("glyphicon-chevron-down");
+        }
+    }
+    $("#cat"+k).toggle();
+    $("#icon"+k).toggleClass("glyphicon-chevron-down");
+    $("#icon"+k).toggleClass("glyphicon-chevron-up");
+}
+function pushurl(a){
+    if (window.intent && window.intent.getUrl) {
+        window.intent.getUrl(a);
+    } else if (window.send && window.send.getUrl) {
+        window.send.getUrl(a);
+    }
+}

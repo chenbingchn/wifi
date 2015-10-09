@@ -1,0 +1,133 @@
+<?php
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+?>
+<html>
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            body{
+                margin: 0px;
+                padding: 0px;
+                font-family: 微软雅黑;
+                background: #F5F5F5
+            }
+            a{
+                text-decoration: none;
+                color: black;
+            }
+            .nav{
+                background: #1c8a00;
+                height: 46px;
+                width: 100%;
+                text-align: center;
+                line-height: 46px;
+                font-size: 20px;
+                color: white;
+                font-family: 微软雅黑;
+            }
+            .activity{
+                /*background: white;*/
+                margin-top: 10px;
+            }
+            .activity-item{
+                margin-top: 10px;
+                background: white;
+            }
+            .activity-item .left-item{
+                width: 35%;
+                /*width: 30%;*/
+                /*float: left;*/
+                vertical-align: middle;
+                display: inline-block;
+                /*height: 80px;*/
+            }
+            .activity-item .center-item{
+                width: 40%;
+                vertical-align: middle;
+                display: inline-block;
+            }
+            .activity-item .right-item{
+                width: 20%;
+                vertical-align: middle;
+                display: inline-block;
+                color:#E8A76E
+            }
+            .activity-item .left-item img{
+                display: block;
+                margin: 5% auto;
+                /*height: 70px;*/
+                width: 90%;
+            }
+            .activity-item .center-item{
+                font-size: 12px;
+                text-align: center;
+            }
+            .activity-item .center-item .text-container{
+                padding-top: 10px;
+                padding-bottom: 10px;
+                text-align: left;
+                text-align: justify
+            }
+            .right-item .button{
+                width: 90%;
+                background: #1c8a00;
+                text-align: center;
+                color: #FAFAFA;
+                font-size: 14px;
+                border-radius: 10px;
+                margin: 0px auto;
+                height: 40px;
+                line-height: 40px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="nav">Exchange history</div>
+        <div class="activity">
+            <div class="activity-item">
+                <div class="left-item">
+                    <img src="http://wifiop.enmonet.com/wifi_op/trunk/basic/web/poins_image/%E5%8D%A125000.png"/>
+                </div>
+                <div class="center-item">
+                    <div class="text-container">
+                        <div style="font-size:14px">11111111111</div>
+                        <div style="color:#999;margin-top: 5px;">22222222</div>
+                        <div style="color:#999;margin-top: 5px;">
+                            <div style="height:23px;margin-left:3px;line-height: 23px;">Time:2015-09-09</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-item">
+                    $10000
+                </div>
+                <div style="clear: both"></div>
+            </div>
+
+            <div class="activity-item">
+                <div class="left-item">
+                    <img src="http://wifiop.enmonet.com/wifi_op/trunk/basic/web/poins_image/%E5%8D%A125000.png"/>
+                </div>
+                <div class="center-item">
+                    <div class="text-container">
+                        <div style="font-size:14px">11111111111</div>
+                        <div style="color:#999;margin-top: 5px;">22222222</div>
+                        <div style="color:#999;margin-top: 5px;">
+                            <div style="height:23px;margin-left:3px;line-height: 23px;">Time:2015-09-09</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-item">
+                    $10000
+                </div>
+                <div style="clear: both"></div>
+            </div>
+        </div>
+    </body>
+</html>
+

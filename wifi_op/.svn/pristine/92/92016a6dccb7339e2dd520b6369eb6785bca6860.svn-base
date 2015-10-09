@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>积分兑换首页</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    </head>
+    <body>
+    	<!--导航-->
+    	<div class="nav">
+    		<div class="content">
+    	
+    		<div class="title">Point Mall</div>
+    		<div class="right"><div class="backico"></div></div>
+    	    <div class="back"></div>
+    		</div>
+    	</div>
+    	<!--导航结束-->
+    	<!--用户登录-->
+    	<div class="user">
+    		<!--登录前-->
+    		<div class="login">
+    			<div class="head"><div class="login-ico"></div><span>Login</span></div>
+    			<div class="glod"><div class="point"></div><span>350</span></div>
+    		</div>
+    		<!--登录前状态结束-->
+    		<!--登录后-->
+    		<div class="userinfo">
+    			<div class="head"><div class="login-ico"><img src="./images/user.jpg" alt="" /></div><span>username</span></div>
+    			<div class="glod"><div class="point"></div><span>350</span></div>
+    		</div>
+    		<!--登录后状态结束-->
+    	</div>
+    	<!--用户登录结束-->
+    	<!--活动图片-->
+   		<div class="adimg">
+   			<a href=""><img src="./images/ad.jpg" alt="" /></a>
+   		</div>
+    	<!--活动图片结束-->
+    	<!--兑奖帮助登录前 ico改为loginedico 极为登录后 或使用另外样式-->
+    	<div class="exchanged">
+    		<div class="history">
+    			<div class="content">
+    				<div class="ico"></div>
+    				<span>Exchange history</span>
+    			</div>
+    		</div>
+    		<div class="points">
+    			<div class="content">
+    				<div class="ico"></div>
+    				<span>How to earn points</span>
+    			</div>
+    		</div>
+    	</div>
+    	<!--兑奖帮助登录前结束-->
+    	<!--兑奖帮助登录登录后 -->
+    	<div class="logined">
+    		<div class="history">
+    			<div class="content">
+    				<div class="ico"></div>
+    				<span>Exchange history</span>
+    			</div>
+    		</div>
+    		<div class="points">
+    			<div class="content">
+    				<div class="ico"></div>
+    				<span>How to earn points</span>
+    			</div>
+    		</div>
+    	</div>
+    	<!--奖帮助登录登录后结束-->
+    	<!--兑奖活动信息-->
+    		<div id="content">
+    			<div class="title">
+    				<div class="ico"></div><span>HOT(4)</span>
+    			</div>
+    			<div class="content">
+
+    				<ul class="">
+    					<div class="left">
+    					<li class="img"><a href=""><img src="images/type1.jpg" alt="" /></a></li>
+    					</div>
+    					<div class="right">
+    					<li class="title"><a href="title">Voucher pulsa</a></li>
+    					<li class="describe">Voucher pulsaVoucher pulsaVou</li>
+    					<li class="usecoin"><div class="leftpoints"><div class="ico"></div><span>1000</span></div><div class="rightexchange"><a href="" class="goexchange succe">Exchanged</a></div></li>
+    					</div>
+    				</ul>
+    				
+    				    				<ul class="">
+    					<div class="left">
+    					<li class="img"><a href=""><img src="images/type2.jpg" alt="" /></a></li>
+    					</div>
+    					<div class="right">
+    					<li class="title"><a href="title">Voucher pulsa</a></li>
+    					<li class="describe">Voucher pulsaVoucher pulsaVou</li>
+    					<li class="usecoin"><div class="leftpoints"><div class="ico"></div><span>1000</span></div><div class="rightexchange"><a href="" class="goexchange succe">Exchanged</a></div></li>
+    					</div>
+    				</ul>
+    				
+    				    				<ul class="">
+    					<div class="left">
+    					<li class="img"><a href=""><img src="images/type3.jpg" alt="" /></a></li>
+    					</div>
+    					<div class="right">
+    					<li class="title"><a href="title">Voucher pulsa</a></li>
+    					<li class="describe">Voucher pulsaVoucher pulsaVou</li>
+    					<li class="usecoin"><div class="leftpoints"><div class="ico"></div><span>1000</span></div><div class="rightexchange"><a href="" class="goexchange fail">Sold out</a></div></li>
+    					</div>
+    				</ul>
+    				
+    				    				<ul class="">
+    					<div class="left">
+    					<li class="img"><a href=""><img src="images/type4.jpg" alt="" /></a></li>
+    					</div>
+    					<div class="right">
+    					<li class="title"><a href="title">Voucher pulsa</a></li>
+    					<li class="describe">Voucher pulsaVoucher pulsaVou</li>
+    					<li class="usecoin"><div class="leftpoints"><div class="ico"></div><span>1000</span></div><div class="rightexchange"><a href="" class="goexchange succe">Exchanged</a></div></li>
+    					</div>
+    				</ul>
+    				
+    			</div>
+    		</div>
+    	<!--兑奖活动信息结束-->
+    	<!--弹出框-->
+    	<div class="alert">
+    		<div class="title">Successfully Exchanged<div class="close"></div></div>
+    		
+    		<div class="content">
+    			<!--兑换成功提示内容-->
+    			<div class="okalert">
+    			恭喜您成功兑换<span class="goosname">【商品名】</span>,详情请在兑换记录查看。
+    			</div>
+    			<!--兑换成功提示内容结束-->
+    			<!--提示框内容-->
+    			<div class="tips">
+    				价格兑换失败，您的账号已在其他  手机登录
+    			</div>
+    			<!--提示内容结束-->
+    			<!--兑换成功提示-->
+    			<div class="checkbtn">Check it now</div>
+    			<!--兑换成功提示结束-->
+    			<!--提示操作按钮-->
+    			<div class="tipsbtn">
+    			<div class="sure">知道了</div>
+    			<div class="quit">重新登录</div>
+    			</div>
+    			<!--提示操作按钮结束-->
+    		</div>
+    	</div>
+    	<!--弹出框结束-->
+    	<!--遮罩层-->
+    	<div class="cover">
+    		
+    	</div>
+    	<!--遮罩层结束-->
+    	
+	</body>
+</html>

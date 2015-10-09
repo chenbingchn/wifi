@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, width=device-width">
+        <link rel="stylesheet" type="text/css" href="../../../web/css/share_find_style.css">
+        <title>Bagaimana untuk berbagi WIFi?</title>
+    </head>
+    <body>
+        <div class="nav">
+            <div class="icon-left" onclick="rePage()"><img src="../../../web/images/back_left.png" width="30px";></div>
+            <div class="nav_content text-center">Bagaimana untuk berbagi WIFi?</div>
+        </div>
+        <div class="content">
+            <p>1. Setelah Anda terhubung dengan hotspot WiFi, Klik Share WiFi/Berbagi WiFi untuk share WiFi password.</p>
+            <img src="../../../web/images/share_id_1.jpg">
+            <p>Anda akan mendapatkan 100 poin setelah share sukses. Klik ke WiFi Yang Udah Saya Share untuk cek WiFi yang sudah anda share.</p>
+            <img src="../../../web/images/share_id_2.jpg">
+            <p>2. Anda juga bisa mencari WiFi di WiFi Yang Butuh Password. Klik ke klik to share Win voucher pulsa.</p>
+            <img src="../../../web/images/share_id_3.jpg">
+            <p>Masukkan password WiFi dan tunggu hingga terhubung. Setelah sukses terhubung, Anda akan mendapatkan 100 poin. Cari lebih banyak WiFi di kolom WiFi Yang Butuh Password dan dapatkan lebih banyak poin.</p>
+            <img src="../../../web/images/share_id_4.png">
+            <p>3. Pengguna lain terhubung ke WiFi hotspot dibagi oleh Anda, Anda akan mendapatkan 50 poin untuk setiap konektor baru. Poin akan terbatas pada 1000 Poin untuk per hotspot WiFi pada setiap hari.</p>
+        </div>
+        <div class="share_button" onclick="">Share WiFi</div>
+        <script>
+            function rePage(){
+                window.location.href="backapp://back";
+            }
+        </script>
+    </body>
+</html>

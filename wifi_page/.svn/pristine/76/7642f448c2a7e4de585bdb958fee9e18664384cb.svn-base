@@ -1,0 +1,131 @@
+@charset "utf-8";
+body {
+    width: 100%;
+}
+.maincategory{
+    width: 25%;
+    float: left;
+    text-align: center;
+    font-size: 14px;
+    overflow: visible;
+    padding-top: 10px;
+    line-height: 1;
+}
+.mainclass{
+    height: 30px;
+    line-height: 30px;
+    font-size: 16px;
+    padding-right: 10px;
+}
+.hrstyle{
+    margin-top: 0;
+    margin-bottom: 0;
+    clear: both;
+}
+.glyphicon{
+    position: relative;
+    top: -2px;
+    display: inline-block;
+    font-family: "Glyphicons Halflings";
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    -moz-osx-font-smoothing: grayscale;
+}
+/*导航*/
+#nav{
+    position:relative;
+    padding-left: 0;
+    padding-right: 0;
+    background-color: #EEEEEE;
+    height: 40px;
+    text-align: center;
+}
+.nav {
+    position:relative;
+    padding-top: 10px;
+    height:40px;
+}
+.nav li {
+    float:left;
+    display:inline;
+    height:26px;
+    line-height:26px;
+    width: 20%;
+}
+.nav li a {
+    padding:0 10px;
+    font-size:14px;
+    color:#6b6b6b;
+    font-weight:700;
+    text-decoration:none;
+}
+.nav li a:hover {
+    text-decoration:none;
+}
+.nav li.cur a {
+    color:#329519;
+    width:100px;
+}
+.nav .nav-line {
+    position:absolute;
+    border-bottom:2px solid #329519;
+    height:0;
+    overflow:hidden;
+    left:0;
+    bottom:0;
+    width: 20%;
+}
+.container{
+    padding: 0;
+    margin: 0 auto;
+    width:100%;
+}
+#app {
+    width: 100%;
+}
+.app-img{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 25%;
+    float: left;
+    font-size: 14px;
+}
+.app-img img{
+    min-width: 38px;
+    width: 15%;
+}
+.row {
+    text-align: left;
+    height: 40px;
+    margin: 0;
+    padding: 5px 0 10px;
+    background-color: #ffffff;
+    width: 100%;
+}
+#row_list {
+    width: 100%;
+}
+.clearfix {
+    clear: both;
+}
+a:link, a:visited {
+    text-decoration: none;
+    color: #000;
+}
+.cot .hrstyle {
+    margin-top:5px;
+}
+.cot .maincategory:last-child {
+    margin-bottom: 15px;
+}
+.mainclass .glyphicon {
+    margin-top: 10px;
+}
+.banners {
+    position: fixed;
+    bottom: -30px;
+    right: 0;
+    z-index: 9999;
+    width: 100%;
+}

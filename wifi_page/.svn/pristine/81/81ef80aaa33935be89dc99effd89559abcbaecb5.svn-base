@@ -1,0 +1,16 @@
+<?php
+	class Share extends CI_Controller 
+	{
+		public function index() 
+		{
+			$this->lang->load('share','english');
+			$this->load->view('share');
+		}
+
+		public function id() 
+		{
+			$this->lang->load('share','indonesian');
+			$this->load->view('share');
+		}
+	}
+?>

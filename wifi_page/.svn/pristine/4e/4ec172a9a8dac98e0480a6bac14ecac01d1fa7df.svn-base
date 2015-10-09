@@ -1,0 +1,24 @@
+<?php
+
+class Integralrecord extends CI_Model {
+
+    public function __construct() {
+        // Call the CI_Model constructor
+        parent::__construct();
+        $this->load->database();
+    }
+    
+    public function getHistoryByUserId($userId){
+        $sql = "select * from `integral_record` where user_id = {$userId} order by buy_time desc";
+        $record = $this->db->query($sql)->result();
+        foreach($record as $v){
+            $sql = "select * from `integral` where id = {$v->integral_id}";
+            $r = $this->db->query($sql)->result();
+            $v->good =$r[0];
+        }
+        return $record;  
+    }
+    
+
+
+}

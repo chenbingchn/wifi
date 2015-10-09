@@ -1,0 +1,16 @@
+function GetCheckbox(){
+    var data=new Array();
+    $("input:checkbox[name='selection[]']").each(function (){
+        if($(this).is(":checked")==true){
+            data.push($(this).val());
+        }
+    });
+    if(data.length > 0){
+        $.post("index.php?r=integralrecord/show",{'selection[]':data});
+        alert('更新成功！！');
+    }else{
+        alert("请选择要更新成功的选项!");
+    }
+    setTimeout(function(){history.go(0);},1000);
+    
+}

@@ -1,0 +1,45 @@
+<?php
+
+use yii\helpers\Html;
+use yii\grid\GridView;
+use app\models\Share;
+
+/* @var $this yii\web\View */
+/* @var $searchModel app\models\search\ShareSearch */
+/* @var $dataProvider yii\data\ActiveDataProvider */
+
+$this->title = 'Shares';
+$this->params['breadcrumbs'][] = $this->title;
+$id=Share::find()->count();
+?>
+<div class="share-index">
+
+    <h1>首页下标题</h1>
+
+    <?php
+        if($id < 9) {
+            echo '<p>';
+            echo Html::a('Create Share', ['create'], ['class' => 'btn btn-success']);
+            echo '</p>';
+        }
+
+        echo GridView::widget([
+            'dataProvider' => $dataProvider,
+            'columns' => [
+
+                'color_value',
+                'type',
+                'icon',
+                'title',
+                'titlezh',
+                'titleyn',
+                'max_value',
+                'min_value',
+                'pic_url',
+
+                ['class' => 'yii\grid\ActionColumn','header' => 'Operation','template' => '{update}'],
+            ],
+        ]);
+    ?>
+
+</div>

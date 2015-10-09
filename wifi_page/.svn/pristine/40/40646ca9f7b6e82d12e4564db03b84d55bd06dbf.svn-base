@@ -1,0 +1,15 @@
+$(document).ready(function(){
+    $(".cot").hide();
+});
+function button(k,cot){
+    $("#cat"+k).slideToggle(50);
+    $("#icon"+k).toggleClass("glyphicon-minus");
+    for(i=0;i<cot;i++){
+        if(i != k){
+            $('#cat'+i).hide();
+        }
+    }
+}
+function pushurl(a){
+    window.intent.getUrl(a);
+}

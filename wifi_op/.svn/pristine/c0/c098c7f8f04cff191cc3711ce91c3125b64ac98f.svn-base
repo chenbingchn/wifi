@@ -1,0 +1,459 @@
+<?php
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+?>
+<html>
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            body{
+                margin: 0px;
+                padding: 0px;
+                font-family: 微软雅黑;
+                background: #F5F5F5
+            }
+            a{
+                text-decoration: none;
+                color: black;
+            }
+            .nav{
+                position: fixed;
+                top:0px;
+                background: #329519;
+                height: 46px;
+                width: 100%;
+                text-align: center;
+                line-height: 46px;
+                font-size: 18px;
+                color: white;
+                font-family: 微软雅黑;
+            }
+            .left_icon{
+                float: left;
+                padding-left: 3px;
+                padding-top: 8px;
+                position: absolute;
+            }
+            .goods_info{
+                color: #666;
+                height: 50px;
+                border-bottom: 1px solid #ddd;
+            }
+            .goods_info .goods_name{
+                height: 50px;
+                line-height: 50px;
+                float: left;
+                padding-left: 20px;
+            }
+            .goods_info .goods_ponit{
+                float:right;
+                height: 50px;
+                font-size: 12px;
+                text-align: center;
+                margin-right: 20px;
+            }
+            .goods_info .goods_ponit .curr_point{
+                margin-top: 5px;
+                color: #E7A76F;
+                font-size: 16px;
+            }
+            .goods_info .goods_ponit .ori_point{
+                color: #999;
+                text-decoration:line-through;
+            }
+            .valid_date{
+                color: #666;
+                height: 30px;
+                line-height: 30px;
+                border-bottom: 1px solid #ddd;
+                padding-left: 20px;
+
+            }
+            .content{
+                margin-top: 10px;
+                background: white;
+                margin-bottom: 10px;
+            }
+            .content_head{
+                height: 40px;
+                line-height: 40px;
+                border-bottom: 1px solid #ddd;
+            }
+            .content_head .img {
+                height:26px;
+                width: 26px;
+                margin-top: 7px;
+                display: block;
+                float:left;
+                line-height: 26px;
+                margin-left: 20px;
+                background: url('images/icon/ic8.png');
+                color: white;
+                border-radius: 5px;
+                font-size: 12px;
+            }
+            .content_body{
+                padding-left: 20px;
+                padding-top: 5px;
+                text-align: justify;
+                padding-right: 10px;
+                /*padding-bottom: 10px;*/
+            }
+            .button{
+                width: 90%;
+                position: fixed;
+                bottom: 20px;
+                background: #5ead00 ;
+                height: 40px;
+                line-height: 40px;
+                text-align: center;
+                left: 5%;
+                border-radius: 3px;
+                color: white;
+            }
+
+            .modal-dialog .modal-footer{
+                border: 0px;
+            }
+            .modal-dialog .modal-header{
+                border-bottom: 1px solid #1c8a00;
+            }
+            .modal{
+                top:30% !important;
+            }
+            .modal-button{
+                width: 90%;
+                background: #5ead00 ;
+                text-align: center;
+                color: #FAFAFA;
+                font-size: 14px;
+                border-radius: 3px;
+                margin: 0px auto;
+                height: 40px;
+                line-height: 40px;
+            }
+            .invalid-button{
+                width: 90%;
+                position: fixed;
+                bottom: 20px;
+                background: #999;
+                height: 40px;
+                line-height: 40px;
+                text-align: center;
+                left: 5%;
+                border-radius: 3px;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="nav">
+            <div class="left_icon" >
+                <a href="<?= Yii::$app->request->getReferrer(); ?>"><img id="left" src="images/Left.png" height="30" /></a></div>
+<!--                <a href="<?= Yii::$app->urlManager->createUrl(['pointmall/index', 'user_id' => $user_id, 'imei' => $imei, 'access_token' => $access_token]) ?>"><img id="left" src="images/Left.png" height="30" /></a></div>-->
+            <?= $Integral->Title ?>
+        </div>
+        <div style="height:46px;"></div>
+        <div class="img">
+            <img width="100%" src="<?= $Integral->img_url ?>">
+        </div>
+
+        <div class="goods_info">
+            <div class="goods_name"><?= $Integral->Title ?></div>
+            <div class="goods_ponit">
+                <div class="curr_point"><?= $Integral->discount ?> Points</div>
+                <div class="ori_point"><?= $Integral->Integral_value ?> Points</div>
+            </div>
+        </div>
+
+        <div class="valid_date">
+            <span>Valid Date</span>:<span style="font-size:12px;color:#999;padding-left: 5px;"><?= $Integral->start_time ?>  to  <?= $Integral->end_time ?></span>
+        </div>
+        <div style="margin-bottom:60px;">
+            <div class="content">
+                <div class="content_head">
+                    <div class="img"></div>
+                    <div style="float:left;height:40px;line-height: 40px;margin-left: 10px;color:#E8A76E"> Item Description</div>
+                </div>
+                <div class="content_body">
+    <!--                <p>1. hellwo wor ldhe llwo wor ldhellwo wor ldhellwo world</p>
+                    <p>2. hellwo wor ldhe llwo wor ldhellwo wor ldhellwo world</p>-->
+                    <?= $Integral->Content ?>
+                </div>
+            </div>
+            <div class="content">
+                <div class="content_head">
+                    <div class="img"></div>
+                    <div style="float:left;height:40px;line-height: 40px;margin-left: 10px;color:#E8A76E">How to exchange?</div>
+                </div>
+                <div class="content_body">
+                    <?= $Integral->use ?>
+    <!--                <p>1. hellwo wor ldhe llwo wor ldhellwo wor ldhellwo world</p>
+                    <p>2. hellwo wor ldhe llwo wor ldhellwo wor ldhellwo world</p>
+                    <p>2. hellwo wor ldhe llwo wor ldhellwo wor ldhellwo world</p>
+                    <p>2. hellwo wor ldhe llwo wor ldhellwo wor ldhellwo world</p>-->
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="content_head">
+                    <div class="img"></div>
+                    <div style="float:left;height:40px;line-height: 40px;margin-left: 10px;color:#E8A76E">Tips</div>
+                </div>
+                <div class="content_body">
+    <!--                <p>1. hellwo wor ldhe llwo wor ldhellwo wor ldhellwo world</p>
+                    <p>2. hellwo wor ldhe llwo wor ldhellwo wor ldhellwo world</p>-->
+                    <?= $Integral->tips ?>
+                </div>
+            </div>
+
+
+        </div>    
+        <?php if (!strpos(Yii::$app->request->getReferrer(), 'history')) { ?>
+            <?php if ($user_id && $user_id != -1): ?>
+                <?php if ($Integral->isSoldOut()): ?>
+                    <div class="invalid-button" count="<?= $Integral->discount ?>" giftId="<?= $Integral->id ?>" giftname="<?= $Integral->Title ?>">Sold out</div>
+                <?php elseif (!$Integral->isValidGoods()): ?>
+                    <div class="invalid-button" count="<?= $Integral->discount ?>" giftId="<?= $Integral->id ?>" giftname="<?= $Integral->Title ?>">Exchange</div>
+                <?php else: ?>
+                    <div class="button exchanged" count="<?= $Integral->discount ?>" giftId="<?= $Integral->id ?>" giftname="<?= $Integral->Title ?>">Exchange</div>
+                <?php endif; ?>
+            <?php else: ?>
+                <div class="button login" count="<?= $Integral->discount ?>" giftId="<?= $Integral->id ?>" giftname="<?= $Integral->Title ?>">Exchange</div>
+            <?php endif; ?>
+        <?php } ?>
+
+
+
+        <!-- 确认Modal -->
+        <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img width="30px" src="images/icon/close.png"></span></button>
+                        <h4 class="modal-title text-center" id="myModalLabel">Exchange confirmation</h4>
+                    </div>
+                    <div class="modal-body">
+                        <!--                        兑换商品需要消费当前账户3000金币，确认兑换么?-->
+                    </div>
+                    <div class="modal-footer">
+                        <div class="row text-center">
+                            <div class="col-md-6 col-sm-6 col-xs-6"><div class="modal-button" style="background:#68C052;" data-dismiss="modal" aria-label="Close">NO</div></div>
+                            <div class="col-md-6 col-sm-6 col-xs-6"><div class="modal-button submitButton">Yes</div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- 成功Modal -->
+        <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img width="30px" src="images/icon/close.png"></span></button>
+                        <h4 class="modal-title text-center" id="myModalLabel">Successfully Exchanged</h4>
+                    </div>
+                    <div class="modal-body">
+                        <!--                        兑换商品需要消费当前账户3000金币，确认兑换么?-->
+                    </div>
+                    <div class="modal-footer">
+                        <div class="row text-center">
+                            <div class="col-md-12 col-sm-12 col-xs-12"><a href="<?= Yii::$app->urlManager->createUrl(['pointmall/history', 'user_id' => $user_id]) ?>"><div class="modal-button">Check it now</div></a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 次数限制Modal -->
+        <div class="modal fade" id="limitModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img width="30px" src="images/icon/close.png"></span></button>
+                        <h4 class="modal-title text-center" id="myModalLabel">Exchange Failed</h4>
+                    </div>
+                    <div class="modal-body">
+                        You have exchanged for this item today. You can exchange for this item everyday for only once.
+                    </div>
+                    <div class="modal-footer">
+                        <div class="row text-center">
+                            <div class="col-md-12 col-sm-12 col-xs-12"><div class="modal-button" data-dismiss="modal" aria-label="Close">Yes</div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 重复登陆Modal -->
+        <div class="modal fade" id="reloginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img width="30px" src="images/icon/close.png"></span></button>
+                        <h4 class="modal-title text-center" id="myModalLabel">Warm Tip</h4>
+                    </div>
+                    <div class="modal-body">
+                        兑换失败，您的账号已经在其他手机登陆
+                    </div>
+                    <div class="modal-footer">
+                        <div class="row text-center">
+                            <div class="col-md-6 col-sm-6 col-xs-6"><div class="modal-button" style="background:#68C052;" data-dismiss="modal" aria-label="Close">知道了</div></div>
+                            <div class="col-md-6 col-sm-6 col-xs-6"><div class="modal-button login">重新登陆</div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 登陆失效Modal -->
+        <div class="modal fade" id="InvalidLoginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img width="30px" src="images/icon/close.png"></span></button>
+                        <h4 class="modal-title text-center" id="myModalLabel">Warm Tip</h4>
+                    </div>
+                    <div class="modal-body">
+                        登录状态已失效，请重新登录
+                    </div>
+                    <div class="modal-footer">
+                        <div class="row text-center">
+                            <div class="col-md-6 col-sm-6 col-xs-6"><div class="modal-button" style="background:#68C052;" data-dismiss="modal" aria-label="Close">取消兑换</div></div>
+                            <div class="col-md-6 col-sm-6 col-xs-6"><div class="modal-button login">重新登陆</div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 积分不足Modal -->
+        <div class="modal fade" id="insufficientModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img width="30px" src="images/icon/close.png"></span></button>
+                        <h4 class="modal-title text-center" id="myModalLabel">Insufficient Points</h4>
+                    </div>
+                    <div class="modal-body">
+                        You don't have enough Points to exchange for this prize. Earn more points and come back later.
+                    </div>
+                    <div class="modal-footer">
+                        <div class="row text-center">
+                            <div class="col-md12 col-sm-12 col-xs-12"><a href="<?= Yii::$app->urlManager->createUrl(['site/guidance']); ?>"><div class="modal-button">How to earn points</div></a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 绑定Modal -->
+        <div class="modal fade" id="bindModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img width="30px" src="images/icon/close.png"></span></button>
+                        <h4 class="modal-title text-center" id="myModalLabel">Exchange Failed</h4>
+                    </div>
+                    <div class="modal-body">
+                        You have to bind your phone number before exchange.
+                    </div>
+                    <div class="modal-footer">
+                        <div class="row text-center">
+                            <div class="col-md-6 col-sm-6 col-xs-6"><div class="modal-button" style="background:#68C052;" data-dismiss="modal" aria-label="Close">Cancel</div></div>
+                            <div class="col-md-6 col-sm-6 col-xs-6"><div class="modal-button bind">Bind Now</div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <form>
+            <input type="hidden" value="<?= $access_token ?>" name="access_token">
+            <input type="hidden" value="<?= $user_id ?>" name="user_id">
+            <input type="hidden" value="<?= $imei ?>" name="imei">
+            <input type="hidden" value="<?= $id ?>" name="gift">
+            <input type="hidden" value="<?= $Integral->Title ?>" name="giftname">
+        </form>
+
+        <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+        <script src="js/jquery.min.js" type="text/javascript"></script>
+        <script src="js/bootstrap.min.js" type="text/javascript"></script>
+        <script>
+            $(function() {
+                $('.login').on('click', function() {
+//                alert(1);
+                    window.intent.goToLogin();
+                });
+//            $('.exchanged').on('click', function() {
+//                $('#successModal').modal({show: true});
+//                $('#limitModal').modal({show: true});
+//                $('#reloginModal').modal({show: true});   
+//                $('#insufficientModal').modal({show: true});
+//                $('#InvalidLoginModal').modal({show: true});
+//            });
+                $('.exchanged').on('click', function() {
+                    $('input[name="giftId"]').val($(this).attr('giftId'));
+//                    $('#confirmModal').find('.modal-body').text('兑换' + '<?= $Integral->Title ?>' + '需要消费当前账户' + '<?= $Integral->discount ?>' + '金币，确认兑换么?');
+                    $('#confirmModal').find('.modal-body').text('It will cost you ' + $(this).attr('count') + ' Points to exchange for the ' + $(this).attr('giftname') + '.Are you sure?');
+                    $('#confirmModal').modal({show: true});
+                });
+                $('.submitButton').on('click', function() {
+                    var user_id = $('input[name="user_id"]').val();
+                    var access_token = $('input[name="access_token"]').val();
+                    var imei = $('input[name="imei"]').val();
+                    var giftId = $('input[name="gift"]').val();
+//                    alert(giftId);
+                    var url = "<?= Yii::$app->urlManager->createUrl('pointmall/exchange') ?>";
+                    $.get(url, {user_id: user_id, access_token: access_token, imei: imei, giftId: giftId}, function(data) {
+                        var obj = eval('(' + data + ')');
+
+                        if (obj.code === 0) {
+                            $('.user-info').find('.point').text(obj.reason);
+                            $('#confirmModal').modal('hide');
+//                            $('#successModal')..find('.modal-body').text('恭喜您 成功兑换商品,详情请在兑换记录中查看');
+                            $('#successModal').find('.modal-body').text('Congratulation on exchanging for the '+ $('input[name="giftname"]').val()+' successfully.Check Exchange History for more information.');
+                            $('#successModal').modal({show: true});
+                        } else if (obj.code === 20002) {
+                            //积分不足
+                            $('#confirmModal').modal('hide');
+                            $('#insufficientModal').modal({show: true});
+                        } else if (obj.code === 30009) {
+                            //该账号在其他设备 重新登陆
+                            $('#confirmModal').modal('hide');
+                            window.intent.chooseIntent(obj.code);
+//                            $('#reloginModal').modal({show: true});
+                        } else if (obj.code === 20003) {
+                            //兑换的限制
+                            $('#confirmModal').modal('hide');
+                            $('#limitModal').modal({show: true});
+                        } else if (obj.code === 30008) {
+                            //兑换的限制
+                            $('#confirmModal').modal('hide');
+                            window.intent.chooseIntent(obj.code);
+//                            $('#InvalidLoginModal').modal({show: true});
+                        } else if ((obj.code === 5002)) {
+                            $('#confirmModal').modal('hide');
+                            $('#bindModal').modal({show: true});
+                        }
+                    });
+                });
+                $('.bind').on('click', function() {
+                    window.intent.bindPhone();
+                });
+
+//                $('.left_icon').on('click', function() {
+//                    window.location.href = "backapp://back";
+//                });
+            });
+        </script>
+    </body>
+</html>
+

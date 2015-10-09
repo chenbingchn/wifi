@@ -1,0 +1,32 @@
+<?php
+
+    $lang['Points']='Poin';
+    $lang['Points  Mall']='Poin Mall';
+    $lang['Login']='Masuk';
+    $lang['Exchange history']='History Penukaran';
+    $lang['How to earn points']='Bagaimana cara mendapatkan poin';
+    $lang['Sold out']='Habis';
+    $lang['Exchange']='Penukaran';
+    $lang['Exchange confirmation']='Konfirmasi Penukaran';
+    $lang['Yes']='Ya';
+    $lang['NO']='Tidak';
+    $lang['Successfully Exchanged']='Penukaran Sukses';
+    $lang['Check it now']='Lihat Sekarang';
+    $lang['Exchange Failed']='Penukaran Gagal';
+    $lang['You have exchanged for this item today. You can exchange for this item everyday for only once.']='Maaf, Anda telah menukarkan item tersebut hari ini. Anda hanya bisa menukarkan satu kali dalam sehari.';
+    $lang['Insufficient Points']='Poin Tidak Cukup';
+    $lang["You don't have enough Points to exchange for this prize. Earn more points and come back later."]='Anda tidak memiliki Poin cukup untuk penukaran ini. Kumpulkan lagi Poin Anda dan silakan melakukan penukaran kembali.';
+    $lang['Bind Now']='Daftarkan sekarang';
+    $lang['Cancel']='Batal';
+    $lang['It will cost you <span class="spend_count"></span> Points to exchange for the <span class="spend_name"></span>, Are you sure?']='Pertukaran komoditas <span class="spend_name"></span> perlu akun ini  <span class="spend_count"></span> poin,Petukaran gak ?';
+    $lang['Congratulation on exchanging for the <span class="spend_name"></span> successfully.Check Exchange History for more information.']='Selamat! Penukaran sebesar <span class="spend_name"></span> telah berhasil. Silakan cek history penukaran kamu untuk informasi lebih lanjut';
+    $lang['Validity']='Masa Berlaku';
+    $lang['to']='sampai';
+    $lang['Item Description']='Deskripsi Item';
+    $lang['How to exchange?']='Bagaimana cara melakukan penukaran?';
+    $lang['Tips']='Tips';
+    $lang['Earn points'] = 'Dapatkan Poin';
+    $lang['My points'] = 'Poin Saya';
+    $lang['How to earn points ?'] = 'Bagaimana cara menghasilkan poin?';
+    $lang['Current Activities'] = 'Aktivitas Saat Ini';
+    $lang['You have never exchanged for <a href="" class="jump">any</a> item,Surprise gifts are discount sale, view Points Mall .'] = 'Kamu belum menukarkan <a href="" class="jump">item</a> apa-apa. Surprise gifts sedang diskon, silakan kunjungi Points Mall.';

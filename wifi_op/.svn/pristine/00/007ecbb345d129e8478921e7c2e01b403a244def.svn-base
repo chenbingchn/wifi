@@ -1,0 +1,47 @@
+<?php
+
+use yii\helpers\Html;
+use yii\widgets\ActiveForm;
+
+/* @var $this yii\web\View */
+/* @var $model app\models\Award */
+/* @var $form yii\widgets\ActiveForm */
+
+?>
+
+<?php
+    $pdo = new PDO('mysql:host=localhost;dbname=wifi', 'root', '');
+    $sql = 'SELECT * FROM award WHERE award_type = 1';
+    $result = $pdo->query($sql);
+?>
+<script type="text/javascript">
+    function autoValue()
+    {
+        var typeCode=document.getElementById("type_code").value;
+        document.getElementById("type_en").value=typeCode;
+        document.getElementById("type_id").value=typeCode;
+        document.getElementById("type_zh").value=typeCode;
+    }
+</script>
+
+<div class="award-form">
+
+    <?php $form = ActiveForm::begin(); ?>
+
+    <?= $form->field($model, 'mobile')->textInput(['maxlength' => 11]) ?>
+
+    <?= $form->field($model, 'award_type')->textInput(['maxlength' => 2, 'id' => 'type_code', 'onblur'=>"autoValue()"]) ?>
+
+    <?= $form->field($model, 'award_type_en')->textInput(['maxlength' => 50, 'id' => 'type_en', 'onblur'=>"autoValue()"]) ?>
+
+    <?= $form->field($model, 'award_type_id')->textInput(['maxlength' => 50, 'id' => 'type_id', 'onblur'=>"autoValue()"]) ?>
+
+    <?= $form->field($model, 'award_type_zh')->textInput(['maxlength' => 50, 'id' => 'type_zh', 'onblur'=>"autoValue()"]) ?>
+
+    <div class="form-group">
+        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+    </div>
+
+    <?php ActiveForm::end(); ?>
+
+</div>

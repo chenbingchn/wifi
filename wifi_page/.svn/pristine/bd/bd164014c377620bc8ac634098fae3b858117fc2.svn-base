@@ -1,0 +1,31 @@
+<?php
+
+    $lang['Points']='Points';
+    $lang['Points  Mall']='Points  Mall';
+    $lang['Login']='Login';
+    $lang['Exchange history']='Exchange history';
+    $lang['How to earn points']='How to earn points';
+    $lang['Sold out']='Sold out';
+    $lang['Exchange']='Exchange';
+    $lang['Exchange confirmation']='Exchange confirmation';
+    $lang['Yes']='Yes';
+    $lang['NO']='NO';
+    $lang['Successfully Exchanged']='Successfully Exchanged';
+    $lang['Check it now']='Check it now';
+    $lang['Exchange Failed']='Exchange Failed';
+    $lang['You have exchanged for this item today. You can exchange for this item everyday for only once.']='You have exchanged for this item today. You can exchange for this item everyday for only once.';
+    $lang['Insufficient Points']='Insufficient Points';
+    $lang["You don't have enough Points to exchange for this prize. Earn more points and come back later."]="You don't have enough Points to exchange for this prize. Earn more points and come back later.";
+    $lang['Bind Now']='Bind Now';
+    $lang['Cancel']='Cancel';
+    $lang['It will cost you <span class="spend_count"></span> Points to exchange for the <span class="spend_name"></span>, Are you sure?']='It will cost you <span class="spend_count"></span> Points to exchange for the <span class="spend_name"></span>, Are you sure?';
+    $lang['Congratulation on exchanging for the <span class="spend_name"></span> successfully.Check Exchange History for more information.']='Congratulation on exchanging for the <span class="spend_name"></span> successfully.Check Exchange History for more information.';
+    $lang['Validity']='Validity';
+    $lang['to']='to';
+    $lang['Item Description']='Item Description';
+    $lang['How to exchange?']='How to exchange?';
+    $lang['Tips']='Tips';
+    $lang['Earn points'] = 'Earn points';
+    $lang['My points'] = 'My points';
+    $lang['How to earn points ?'] = 'How to earn points ?';
+    $lang['Current Activities'] = 'Current Activities';

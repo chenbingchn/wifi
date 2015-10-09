@@ -1,0 +1,47 @@
+<?php
+
+namespace app\models;
+
+use Yii;
+
+/**
+ * This is the model class for table "prize".
+ *
+ * @property integer $id
+ * @property string $mobile
+ * @property string $type
+ */
+class Prize extends \yii\db\ActiveRecord
+{
+    /**
+     * @inheritdoc
+     */
+    public static function tableName()
+    {
+        return 'prize';
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function rules()
+    {
+        return [
+            [['mobile', 'type'], 'required'],
+            [['mobile'], 'string', 'max' => 11],
+            [['type'], 'string', 'max' => 1]
+        ];
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function attributeLabels()
+    {
+        return [
+            'id' => 'ID',
+            'mobile' => '手机号码',
+            'type' => '中奖类型',
+        ];
+    }
+}

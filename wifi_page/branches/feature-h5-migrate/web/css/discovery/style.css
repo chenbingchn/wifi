@@ -1,0 +1,78 @@
+.maincategory{
+    width: 25%;
+    float: left;
+    text-align: center;
+    font-size: 12px;
+    overflow: visible;
+    padding-top: 10px;
+    height: 30px;
+}
+.mainclass{
+    height: 30px;
+    line-height: 30px;
+    font-size: 16px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.hrstyle{
+    margin-top: 0;
+    margin-bottom: 0;
+    clear: both;
+}
+.glyphicon{
+    position: relative;
+    top: -2px;
+    display: inline-block;
+    font-family: "Glyphicons Halflings";
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    -moz-osx-font-smoothing: grayscale;
+}
+#nav{
+    position:relative;
+    padding-left: 0;
+    padding-right: 0;
+    background-color: #EEEEEE;
+    height: 40px;
+}
+.nav{
+    background-color: #eeeeee;
+}
+.nav a{
+    color:#6b6b6b;
+}
+.nav li{
+    float: left;
+    width: 20%;
+    text-align: center;
+    list-style: none;
+    background-color: #eeeeee;
+    height: 40px;
+    font-size: 16px;
+    line-height: 38px;
+}
+.nav li.cur a {
+    color:#329519;
+}
+.nav ul{
+    margin-left: -40px;
+}
+.nav li a:hover {
+    text-decoration:none;
+}
+.nav li a:visited {
+    text-decoration:none;
+}
+.nav .nav-line {
+    position:absolute;
+    border-bottom:2px solid #329519;
+    height:0;
+    overflow:hidden;
+    left:0;
+    bottom:0;
+    width: 20%;
+}
+.container{
+    padding: 0;
+}

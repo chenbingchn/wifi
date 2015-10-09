@@ -1,0 +1,200 @@
+<?php
+
+namespace app\controllers;
+
+use Yii;
+use app\components\TController;
+use app\models\Wifitype;
+use yii\db\Query;
+use yii\data\ActiveDataProvider;
+use yii\web\Controller;
+
+
+/***
+ * Class WifistatisticsController
+ * @package app\controllers
+ *
+ * 用户统计WiFi的使用量和连接量
+ *
+ */
+class WifistatisticsController extends Controller {
+
+    /**
+     *
+     * 获取所有WiFi的总连接和点击量并且支持分类筛选
+     *
+     */
+
+    public function actionIndex()
+    {
+        $model = new Wifitype();
+
+        if($model->load(Yii::$app->request->get())){
+            $str = Yii::$app->request->get('sort');
+            $search = self::getSearch($str);
+            $bssid = $model->bssid;
+            $type = $model->type;
+            $ssid = $model->ssid;
+            $source = $model->source;
+            $start_date = $model->start_date;
+            $end_date = $model->end_date;
+            $sql = new Query();
+            $dataProvider = new ActiveDataProvider([
+                'query' => $sql->select([
+                            "a.bssid",
+                            'sum(case `event_id` when "101" then counter else 0 end) "101"',
+                            'sum(case `event_id` when "102" then counter else 0 end) "102"',
+                            'sum(case `event_id` when "103" then counter else 0 end) "103"',
+                            'sum(case `event_id` when "104" then counter else 0 end) "104"',
+                            'sum(case `event_id` when "105" then counter else 0 end) "105"',
+                            "b.ssid",
+                            "b.created_at",
+                            "b.type",
+                            "b.source",
+                        ])
+                        ->from(['bssid_event_counter as a'])
+                        ->join('LEFT JOIN', 'hotspot as b', 'a.bssid=b.bssid')
+                        ->andFilterWhere(['=','a.bssid',$bssid])
+                        ->andFilterWhere(['=','b.ssid',$ssid])
+                        ->andFilterWhere(['>=','b.created_at',$start_date])
+                        ->andFilterWhere(['<','b.created_at',$end_date])
+                        ->andFilterWhere(['=','b.type',$type])
+                        ->andFilterWhere(['=','b.source',$source])
+                        ->groupBy(['a.bssid'])
+                        ->orderBy(''.$search.''),
+                'pagination' => [
+                    'pageSize' => 15,
+                ],
+            ]);
+        }else{
+            $str = Yii::$app->request->get('sort');
+            $search = self::getSearch($str);
+            $sql = new Query();
+            $dataProvider = new ActiveDataProvider([
+                'query' => $sql->select([
+                            "a.bssid",
+                            'sum(case `event_id` when "101" then counter else 0 end) "101"',
+                            'sum(case `event_id` when "102" then counter else 0 end) "102"',
+                            'sum(case `event_id` when "103" then counter else 0 end) "103"',
+                            'sum(case `event_id` when "104" then counter else 0 end) "104"',
+                            'sum(case `event_id` when "105" then counter else 0 end) "105"',
+                            "b.ssid",
+                            "b.created_at",
+                            "b.type",
+                            "b.source",
+                        ])
+                        ->from(['bssid_event_counter as a'])
+                        ->join('LEFT JOIN', 'hotspot as b', 'a.bssid=b.bssid')
+                        ->groupBy(['a.bssid'])
+                        ->orderBy(''.$search.''),
+                'pagination' => [
+                    'pageSize' => 15,
+                ],
+            ]);
+        }
+
+        return $this->render('index', [
+            'model' => $model,
+            'dataProvider' => $dataProvider,
+        ]);
+    }
+
+    /**
+     *
+     * 查看已经筛选出来的WiFi的每天连接情况
+     * 需要给传递 $bssid
+     * 并且 $bssid 是一个string类型
+     *
+     */
+
+    public function actionDetailed($bssid){
+        $str = Yii::$app->request->get('sort');
+        $search = self::getSearch($str);
+        $sql = new Query();
+        $dataProvider = new ActiveDataProvider([
+            'query' => $sql->select([
+                'bssid',
+                'sum(case `event_id` when "101" then counter else 0 end) "101"',
+                'sum(case `event_id` when "102" then counter else 0 end) "102"',
+                'sum(case `event_id` when "103" then counter else 0 end) "103"',
+                'sum(case `event_id` when "104" then counter else 0 end) "104"',
+                'sum(case `event_id` when "105" then counter else 0 end) "105"',
+                'DATE_FORMAT(Date,"%Y-%m-%d") `Datetime` ',
+            ])
+                ->from(['bssid_event_counter as a'])
+                ->andFilterWhere(['=','bssid',$bssid])
+                ->groupBy(['a.date'])
+                ->orderBy(''.$search.''),
+        ]);
+        return $this->render('detailed',[
+            'bssid' => $bssid,
+            'dataProvider'=>$dataProvider
+        ]);
+    }
+
+    public function actionType(){
+        $str = Yii::$app->request->get('sort');
+        $search = self::getSearch($str);
+        $sql = new Query();
+        $dataProvider = new ActiveDataProvider([
+            'query' => $sql->select([
+                "b.type",
+                'sum(case `event_id` when "101" then counter else 0 end) "101"',
+                'sum(case `event_id` when "102" then counter else 0 end) "102"',
+                'sum(case `event_id` when "103" then counter else 0 end) "103"',
+                'sum(case `event_id` when "104" then counter else 0 end) "104"',
+                'sum(case `event_id` when "105" then counter else 0 end) "105"',
+            ])
+                ->from(['bssid_event_counter as a'])
+                ->join('LEFT JOIN', 'hotspot as b', 'a.bssid=b.bssid')
+                ->groupBy(['b.type'])
+                ->orderBy(''.$search.''),
+        ]);
+        return $this->render('wifitype',[
+            'dataProvider'=>$dataProvider
+        ]);
+    }
+
+    /**
+     * 判断筛选条件的正序和倒序
+     */
+
+    public function getSearch($str){
+        switch($str){
+            case 'bssid' : $str = 'a.bssid DESC';
+                break;
+            case 'created_at' : $str = 'b.created_at DESC';
+                break;
+            case 'Datetime' : $str = '`Datetime` DESC';
+                break;
+            case 101 : $str = '`101` DESC';
+                break;
+            case 102 : $str = '`102` DESC';
+                break;
+            case 103 : $str = '`103` DESC';
+                break;
+            case 104 : $str = '`104` DESC';
+                break;
+            case 105 : $str = '`105` DESC';
+                break;
+            case '-bssid' : $str = 'a.bssid ASC';
+                break;
+            case '-created_at' : $str = 'b.created_at ASC';
+                break;
+            case '-Datetime' : $str = '`Datetime` ASC';
+                break;
+            case -101 : $str = '`101` ASC';
+                break;
+            case -102 : $str = '`102` ASC';
+                break;
+            case -103 : $str = '`103` ASC';
+                break;
+            case -104 : $str = '`104` ASC';
+                break;
+            case -105 : $str = '`105` ASC';
+                break;
+            default : $str = 'a.bssid DESC';
+        }
+        return $str;
+    }
+}

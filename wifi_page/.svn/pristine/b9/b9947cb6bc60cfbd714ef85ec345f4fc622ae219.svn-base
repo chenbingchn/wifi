@@ -1,0 +1,22 @@
+<?php
+	class Prize_model extends CI_Model {
+
+	    public function __construct() {
+	        $this->load->database();
+	    }
+
+		public function get_daily_profit() {
+			$query = $this->db->query('select * from prize where type = 1');
+			return $query->result();
+		}
+
+		public function get_daily_prizes() {
+			$query = $this->db->query('select * from prize where type = 2');
+			return $query->result();
+		}
+
+		public function get_grand_prize() {
+			$query = $this->db->query('select * from prize where type = 3');
+			return $query->result();
+		}
+	}

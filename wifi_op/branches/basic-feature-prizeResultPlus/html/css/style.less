@@ -1,0 +1,808 @@
+*{
+    margin:0px;
+    padding: 0px;
+}
+li{
+    list-style: none;
+}
+img{
+    border: none;
+}
+a{
+    text-decoration: none;
+}
+body{
+    font-family: "微软雅黑";
+    font-size: 14px;
+    color: #666666;
+    margin: 0px ;
+    padding: 0px;
+    background: #f6f6f6;
+}
+.nav{
+    width: 100%;
+    height: 46px;
+    line-height: 46px;
+    background: #3cab1f;
+    min-width: 320px;
+    overflow: hidden;
+    .back{
+        width: 84px;
+        height: 46px;
+        background: url(../images/ico.png) no-repeat -616px -1px;
+//      float: left;
+        position: relative;
+        left:0px;
+        top: 13px;
+    }
+//  .right{
+//      width: 84px;
+//      height: 46px;
+//      float: right;
+//  }
+    .title{
+        min-width:152px ;
+        width: 100%;
+        height: 46px;
+        line-height: 46px;
+        color: #ffffff;
+        font-family: Arial;
+        font-weight: 700;
+        font-size: 16px;
+        text-align: center;
+        float: left;
+    }
+}
+.user{
+    width: 100%;
+    height: 52px;
+    min-width: 320px;
+    background: #FFFFFF;
+    overflow: hidden;
+    .login{
+        width: 100%;
+        height: 52px;
+        line-height: 52px;
+        .head{
+        width: 150px;
+        height: 52px;
+        padding-left: 30px;
+        line-height: 52px;
+        float: left;
+        span{
+            color: #000000;
+            float: left;
+            display: inline-block;
+        }
+//      border-right: 1px solid #e0e3e7;
+            .login-ico{
+                width:32px ;
+                height: 32px;
+                background: url(../images/ico.png)no-repeat -269px -1px;
+                position: relative;
+                top: 11px;
+                left: -10px;
+                float: left;
+            }
+        }
+        .glod{
+            width: 120px;
+            height: 52px;
+            line-height: 52px;
+            float: right;
+            .point{
+                width: 26px;
+                height: 26px;
+                background: url(../images/ico.png)no-repeat -398px -1px;
+                top: 13px;
+                left: 5px;
+                position: relative;
+                float: left;
+            }
+            span{
+               text-indent: 10px;
+	           display: inline-block;
+	           font-family: Arial;
+	           color: #666666;
+            }
+        }
+    }
+    .userinfo{
+        width: 100%;
+        height: 52px;
+        line-height: 52px;
+        .head{
+        width: 150px;
+        height: 52px;
+        padding-left: 30px;
+        line-height: 52px;
+        float: left;
+        display: none;
+        span{
+            color: #000000;
+            float: left;
+            display: inline-block;
+        }
+            .login-ico{
+                width:32px ;
+                height: 32px;
+                border-radius: 15px;
+                position: relative;
+                top: 11px;
+                left: -10px;
+                float: left;
+                img{
+                    width: 32px;
+                    height: 32px;
+                    overflow: hidden;
+                    border-radius: 15px;
+                }
+            }
+        }
+        .glod{
+            width: 120px;
+            height: 52px;
+            line-height: 52px;
+            float: right;
+            .point{
+                width: 26px;
+                height: 26px;
+                background: url(../images/ico.png)no-repeat -398px -1px;
+                top: 13px;
+                left: 5px;
+                position: relative;
+                float: left;
+            }
+            span{
+               text-indent: 10px;
+               display: inline-block;
+               font-family: Arial;
+               color: #000000;
+            }
+        }
+    }
+}
+.adimg{
+    background: #FFFFFF;
+    img{
+        width: 100%;
+        min-width: 320px;
+    }
+}
+ .fail{
+    background: #666666;
+}
+.succe{
+    background: #3CAB1F;
+}
+@media screen and (min-width: 100px) and (max-width: 400px) {
+    .exchanged .content {
+     width: 99%;
+     margin-left: -6px;
+     height: 40px;
+     overflow: hidden;
+    }
+    .exchanged .content span{
+        font-size: 10px;
+    }
+}
+.exchanged{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #e0e3e7;
+    padding: 0px;
+    margin-top: -5px;
+    background: #FFFFFF;
+    .history{
+        width: 49%;
+        min-width: 155px;
+        height: 40px;
+        line-height: 40px;
+        border-right: 1px solid #e0e3e7;
+        float: left;
+        .content{
+             padding-left: 15px;
+         }
+        .ico{
+            background: url(../images/ico.png)no-repeat -138px -1px;
+        }
+        .loginedico{
+            background: url(../images/ico.png)no-repeat -449px -1px;
+        }
+    }
+    .points{
+        float: right;
+        width: 49%;
+        min-width: 155px;
+        height: 40px;
+        line-height: 40px;
+        .ico{
+            background: url(../images/ico.png)no-repeat -203px -1px;
+        }
+        .loginedico{
+            background: url(../images/ico.png)no-repeat -486px -1px;
+        }
+        .content{
+             padding-left: 10px;
+         }
+    }
+    .content{
+        width: 98%;
+        min-width: 125px;
+        height: 40px;
+        overflow: hidden;
+        line-height: 40px;
+        overflow: hidden;
+        .ico{
+            width: 25px;
+            height: 25px;
+            overflow: hidden;
+            float: left;
+            position: relative;
+            top: 7px;
+        }
+        .span{
+            color: #000000;
+            font-family: arial;
+            display: inline-block;
+            text-indent: 0px;
+            font-size: 12px;
+        }
+    }
+}@media screen and (min-width: 100px) and (max-width: 400px) {
+    .logined .content {
+     width: 99%;
+     margin-left: -6px;
+     height: 40px;
+     overflow: hidden;
+    }
+    .exchanged .content span{
+        font-size: 10px;
+    }
+}
+.logined{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #e0e3e7;
+    padding: 0px;
+    margin-top: -5px;
+    background: #FFFFFF;
+    display: none;
+    .history{
+        width: 49%;
+        min-width: 155px;
+        height: 40px;
+        line-height: 40px;
+        border-right: 1px solid #e0e3e7;
+        float: left;
+        .content{
+             padding-left: 15px;
+         }
+        .ico{
+            background: url(../images/ico.png)no-repeat -449px -1px;
+        }
+    }
+    .points{
+        float: right;
+        width: 49%;
+        min-width: 155px;
+        height: 40px;
+        line-height: 40px;
+        .ico{
+            background: url(../images/ico.png)no-repeat -486px -1px;
+        }
+        .content{
+             padding-left: 10px;
+         }
+    }
+    .content{
+        width: 98%;
+        min-width: 125px;
+        height: 40px;
+        overflow: hidden;
+        line-height: 40px;
+        overflow: hidden;
+        .ico{
+            width: 25px;
+            height: 25px;
+            overflow: hidden;
+            float: left;
+            position: relative;
+            top: 7px;
+        }
+        .span{
+            color: #000000;
+            font-family: arial;
+            display: inline-block;
+            text-indent: 0px;
+            font-size: 12px;
+        }
+    }
+}
+#content{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    margin-top:10px ;
+    background: #FFFFFF;
+    .title{
+        width: 100%;
+        height: 40px;
+        line-height: 40px;
+        border-bottom: 1px solid #e0e3e7;
+        border-top: 1px solid #e0e3e7;
+        .ico{
+            width: 19px;
+            height: 19px;
+            background: url(../images/ico.png)no-repeat -86px -1px;
+            position: relative;
+            top: 10px;
+            left: 10px;
+            float: left;
+        }
+        span{
+            color: #fb7c14;
+//          font-weight: 700;
+            text-indent: 20px;
+            display: inline-block;
+            font-family: arial;
+            font-size: 16;
+        }
+    }
+    .content{
+        width: 100%;
+        min-width: 320px;
+        ul{
+            width: 100%;
+            min-width: 90px;
+            padding-bottom: 5px;
+        
+            max-height: 170px;
+            float: left;
+            margin-top: 10px;
+            overflow: hidden;
+            border-bottom:1px solid #e0e3e7 ;
+            .left{
+                float: left;
+                min-width: 120px;
+                width: 35%;
+                min-height: 70px;
+                max-height: 170px;
+                margin-left: 10px;
+                margin-top: 10px;
+                overflow: hidden;
+            }
+            .right{
+                float: right;
+                width: 55%;
+                min-width: 180px;
+                max-height:170px ;
+                min-height: 90px;
+                margin-bottom: 10px;
+                margin-left:10px ;
+                margin-left: 10px;
+                margin-top: 10px;
+                .title{
+                   min-width: 160px; 
+                   width: 55%;
+                   height: 30%;
+                   line-height: 25px;
+                   min-height: 25px;
+                   max-height: 80px;
+                   border: none;
+                   font-size: 1em;
+                   a{
+                       font-size: 1em;
+                       color: #000000;
+                   }
+                }
+                .describe{
+                   min-width: 160px; 
+                   width: 55%;
+                   line-height: 30px;
+                   height: 30px; 
+                   overflow: hidden;
+                   
+                }
+                .usecoin{
+                   min-width: 160px; 
+                   width: 55%;
+                   line-height: 20px;
+                   height: 20px;
+                   .leftpoints{
+                       float: left;
+                       width: 45%;
+                       line-height: 20px;
+                       height: 20px;
+                        .ico{
+                            width: 19px;
+                            height: 19px;
+                            background: url(../images/ico.png)no-repeat -602px -1px;
+                            position: relative;
+                            top: 3px;
+                            left: 3px;
+                            float: left;
+                        }
+                        span{
+                            display: inline-block;
+                            float: left;
+                            color: #fc7d16;
+                            text-indent: 5px;
+                        }
+                   }
+                   .rightexchange{
+                       width: 45%;
+                       line-height: 20px;
+                       height: 20px;
+                       float: right;
+                       .goexchange{
+                           width: 90px;
+                           height: 30px;
+                           position: relative;
+                           display: inline-block;
+                           right: 20px;
+                           top:0px;
+                           border-radius: 5px;
+                           line-height: 30px;
+                           text-align: center;
+                           color: #FFFFFF;
+                       }
+                   }
+                }
+            }
+            li{
+                float: left;                
+            }
+            .img{
+                min-width: 75px;
+                width: 90%;
+//              height: 100px;
+                max-height: 170px;
+                overflow: hidden;
+                img{
+                    max-height: 160px;
+                    width: 100%;
+//                  height: 100%;
+                    min-height: 90px;
+                }
+            }
+
+        }
+    }
+}
+@media screen and (min-width: 480px) and (max-width: 570px) {
+    #content .content ul{
+        padding-bottom: 15px;
+    }
+        #content  .content ul  .right{
+                float: right;
+                width: 55%;
+                min-width: 180px;
+                max-height:170px ;
+                min-height: 90px;
+                margin-bottom: 10px;
+                margin-left:10px ;
+                margin-left: 10px;
+                margin-top: 10px;
+                .title{
+                   min-width: 160px; 
+                   width: 55%;
+                   height: 45px;
+                   line-height: 45px;
+                   border: none;
+                   font-size:20px;
+                   a{
+                       font-size: 1em;
+                       color: #000000;
+                   }
+                }
+                .describe{
+                   min-width: 160px; 
+                   width: 55%;
+                   line-height: 20px;
+                   height: 20px; 
+                   overflow: hidden;
+                   
+                }
+                .usecoin{
+                   min-width: 160px; 
+                   width: 98%;
+                   line-height: 20px;
+                   height: 20px;
+                   .leftpoints{
+                       float: left;
+                       width: 45%;
+                       line-height: 20px;
+                       height: 20px;
+                        .ico{
+                            width: 19px;
+                            height: 19px;
+                            background: url(../images/ico.png)no-repeat -602px -1px;
+                            position: relative;
+                            top: 3px;
+                            left: 3px;
+                            float: left;
+                        }
+                        span{
+                            display: inline-block;
+                            float: left;
+                            color: #fc7d16;
+                            text-indent: 5px;
+                        }
+                   }
+                   .rightexchange{
+                       width: 55%;
+                       line-height: 20px;
+                       height: 20px;
+                       float: right;
+                       .goexchange{
+                           width: 100%;
+                           height: 30px;
+                           position: relative;
+                           display: inline-block;
+                           right: 20px;
+                           top:0px;
+                           border-radius: 5px;
+                           line-height: 30px;
+                           text-align: center;
+                           color: #FFFFFF;
+                       }
+                   }
+                }
+            }
+}
+@media screen and (min-width: 570px) and (max-width: 718px) {
+       #content .content ul {
+            padding-bottom: 15px;
+        }
+        #content  .content ul  .right{
+                float: right;
+                width: 55%;
+                min-width: 180px;
+                max-height:170px ;
+                min-height: 90px;
+                margin-bottom: 10px;
+                margin-left:10px ;
+                margin-left: 10px;
+                margin-top: 10px;
+                .title{
+                   min-width: 160px; 
+                   width: 55%;
+                   height: 40px;
+                   line-height: 40px;
+                   border: none;
+                   font-size:22px;
+                   a{
+                       font-size: 1em;
+                       color: #000000;
+                   }
+                }
+                .describe{
+                   min-width: 160px; 
+                   width: 55%;
+                   line-height: 20px;
+                   height: 20px; 
+                   overflow: hidden;
+                   
+                }
+                .usecoin{
+                   margin-top: 10px;
+                   min-width: 160px; 
+                   width: 98%;
+                   line-height: 20px;
+                   height: 20px;
+                   .leftpoints{
+                       float: left;
+                       width: 45%;
+                       line-height: 20px;
+                       height: 20px;
+                        .ico{
+                            width: 19px;
+                            height: 19px;
+                            background: url(../images/ico.png)no-repeat -602px -1px;
+                            position: relative;
+                            top: 3px;
+                            left: 3px;
+                            float: left;
+                        }
+                        span{
+                            display: inline-block;
+                            float: left;
+                            color: #fc7d16;
+                            text-indent: 5px;
+                        }
+                   }
+                   .rightexchange{
+                       width: 55%;
+                       line-height: 20px;
+                       height: 20px;
+                       float: right;
+                       .goexchange{
+                           width: 100%;
+                           height: 40px;
+                           position: relative;
+                           display: inline-block;
+                           right: 20px;
+                           top:0px;
+                           border-radius: 5px;
+                           line-height: 40px;
+                           text-align: center;
+                           color: #FFFFFF;
+                       }
+                   }
+                }
+            }
+}
+@media screen and (min-width: 719px) and (max-width: 1980px) {
+        #content .content ul{
+            padding-bottom: 15px;
+        }
+        #content  .content ul  .right{
+                float: right;
+                width: 55%;
+                min-width: 180px;
+                max-height:170px ;
+                min-height: 90px;
+                margin-bottom: 10px;
+                margin-left:10px ;
+                margin-left: 10px;
+                margin-top: 10px;
+                .title{
+                   min-width: 160px; 
+                   width: 55%;
+                   height: 50px;
+                   line-height: 50px;
+                   border: none;
+                   font-size:20px;
+                   a{
+                       color: #000000;
+                       font-size: 26px;
+                   }
+                }
+                .describe{
+                   min-width: 160px; 
+                   width: 55%;
+                   line-height: 40px;
+                   height: 40px; 
+                   overflow: hidden;
+                   font-size: 16px;
+                }
+                .usecoin{
+                   margin-top: 10px;
+                   min-width: 160px; 
+                   width: 98%;
+                   line-height: 26px;
+                   height: 26px;
+                   .leftpoints{
+                       float: left;
+                       width: 45%;
+                       line-height: 20px;
+                       height: 20px;
+                        .ico{
+                            width: 26px;
+                            height: 26px;
+                            background: url(../images/ico.png)no-repeat -398px -1px;
+                            position: relative;
+                            top: -3px;
+                            left: 3px;
+                            float: left;
+                        }
+                        span{
+                            display: inline-block;
+                            float: left;
+                            color: #fc7d16;
+                            text-indent: 5px;
+                        }
+                   }
+                   .rightexchange{
+                       width: 55%;
+                       line-height: 20px;
+                       height: 20px;
+                       float: right;
+                       .goexchange{
+                           width: 100%;
+                           height: 45px;
+                           position: relative;
+                           display: inline-block;
+                           right: 20px;
+                           top:0px;
+                           border-radius: 5px;
+                           line-height: 45px;
+                           text-align: center;
+                           color: #FFFFFF;
+                       }
+                   }
+                }
+            }
+}
+.cover{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #000000;
+    opacity: 0.6;
+    position:fixed;
+    top: 0px;
+    left: 0px;
+    display: none;
+}
+.alert {
+        display:none;
+        position:fixed;   
+        background-color:white;
+        top:30%;
+        left: 10%;
+        width:80%;
+//      height:300px;
+        z-index:10000;
+        border-radius:15px;
+        .title{
+            color: #1c8a00;
+            font-family: arial;
+            font-size: 16px;
+            text-align: center;
+            height: 50px;
+            line-height: 50px;
+            border-bottom: 1px solid #1c8a00;
+            position: relative;
+             .close{
+                width: 25px;
+                height: 25px;
+                background: url(../images/ico.png)no-repeat right -48px;
+                float: left;
+                position: absolute;
+                top: 8px ;
+                right: 8px;
+            }
+        }
+
+        .content{
+            width: 80%;
+            min-height: 80px;
+            line-height: 30px;
+            margin: 0 auto;
+            padding-bottom: 20px;
+            .goosname{
+                color: #fa722c;
+            }
+            .okalert{
+                display: none;
+            }
+            .checkbtn{
+                width: 80%;
+                height: 40px;
+                line-height: 60px;
+                margin: 10px auto;
+                border-radius: 5px;
+                background: #63b002;
+                text-align: center;
+                color: #FFFFFF;
+                line-height: 40px;
+            }
+            .tipsbtn{
+                width: 80%;
+                line-height: 40px;
+                height: 40px;
+                margin: 0 auto;
+                text-align: center;
+                color: #FFFFFF;
+                .sure{
+                    width: 45%;
+                    height: 40px;
+                    border-radius: 5px;
+                    background: #63b002;
+                    float: left;
+                }
+                .quit{
+                    width: 45%;
+                    height: 40px;
+                    border-radius: 5px;
+                    background: #63b002;
+                    float: left;
+                    margin-left: 10%;
+                }
+            }
+        }
+}

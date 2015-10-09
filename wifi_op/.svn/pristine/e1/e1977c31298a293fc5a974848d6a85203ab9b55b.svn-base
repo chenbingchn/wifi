@@ -1,0 +1,147 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/wifi.css" rel="stylesheet" />
+<link rel="stylesheet" href="css/idangerous.swiper.css">
+<script src="js/Earn.js"></script>
+<?php
+
+
+$lang=count($row);
+if($ep == 'in_ID'){
+    Yii::$app->language = 'in_ID';
+    $Filename = 'id';
+}else{
+    Yii::$app->language = '';
+    $Filename = 'id';
+}
+?>
+<div class="navl head">
+    <div class="headtitle">
+        <div class="headtitleleft" onclick="buttono()"><img id="left" src="images/Left.png" height="30" /></div>
+        <div class="headtitleword"><?echo Yii::t($Filename,'Earn points')?></div>
+    </div>
+    <div style="margin-top: 40px;">
+        <p style="padding-right: 1%;"><img src="images/webdollar.png" height="70"  onclick="ToLogin()" /></p>
+        <div class="top-word">
+            <p><?echo Yii::t($Filename,'My points')?>&nbsp;&nbsp;<span id="integral"></span><span id="integrals"></span></p>
+            <span id="button" class="circle" onclick="EarnPoins()"><?echo Yii::t($Filename,'How to earn points ?')?></span>
+        </div>
+    </div>
+</div>
+
+<div id="view" class="contentrs">
+    <div id="Activities" class="list" style="height: 45px;" onclick="jump()">
+        <div class="words" style="padding-top: 10px;"><?echo Yii::t($Filename,'Current Activities')?></div>
+        <div class="lets">&nbsp;</div>
+    </div>
+    <div class="listNull">&nbsp;</div>
+<?php
+$i=1;
+foreach($row as $k=>$v) {
+    if($v[$langT] == NULL){
+        $langC="Content";
+        $langT="title";
+    }
+    echo '<div id="list'.$k.'" class="list" onclick="colorb('.$k.','.$i.')">';
+    echo '<a href="javascript:;" style="color:#000">';
+    echo '<div class="words"><h5><div class="texts">' . $v[$langT] . '</div><small>' . $v[$langC] . '</small></h5></div>';
+    echo '<div class="show">';
+    echo '<div class="les">&nbsp;</div>';
+    echo '<div id="rig'.$k.'" class="rig">' . $v['integral'] . '</div>';
+    echo '</div>';
+    echo '</a>';
+    echo '</div>';
+
+    if($i >= 2 && $i % 2 == 0){
+        if($lang/$i != 1) {
+            echo '<div id="lint'.$i.'" class="listNull">&nbsp;</div>';
+        }
+    }
+    $i++;
+}
+?>
+
+</div>
+<?php
+if($display == NULL){
+    echo '<script>document.getElementById("Activities").style.display="none";</script>';
+}else{
+    foreach($display as $h=>$t){
+        $activity=$t['activity_url'];
+    }
+?>
+<script>
+    function jump(){
+        document.getElementById('Activities').style.backgroundColor="#e2e1e1";
+        window.setTimeout('url()',10);
+        window.setTimeout('urls()',20);
+//        window.intent.chooseIntent(12);
+    }
+    function url(){
+        document.getElementById('Activities').style.backgroundColor = '#ffffff';
+    }
+    function urls(){
+        window.location.href="<?=$activity?>";
+    }
+</script>
+<?php 
+}
+
+if($user != -1){
+
+    if(count($name) != 0){
+
+        echo '<script>document.getElementById("integrals").style.display="none";</script>';
+
+        if($sharewifi != NULL){
+            echo '<script>document.getElementById("rig0").style.backgroundColor="#cccccc";</script>';
+        }
+        if($sharefrd != NULL){
+            echo '<script>document.getElementById("rig1").style.backgroundColor="#cccccc";</script>';
+        }
+
+        $photo=$name['avatar'];
+        if($photo != NULL){
+            echo '<script>document.getElementById("rig2").style.backgroundColor="#cccccc";</script>';
+            echo '<script>document.getElementById("list2").onclick="return false";</script>';
+        }
+        if(($name['age'] && $name['gender'] && $name['user_name']) != NULL) {
+            echo '<script>document.getElementById("rig3").style.backgroundColor="#cccccc";</script>';
+            echo '<script>document.getElementById("list3").onclick="return false";</script>';
+        }
+    }
+}
+if($imei != -1){
+    if($integral == NUll){
+        echo '<script>document.getElementById("integral").innerHTML="0";</script>';
+        echo '<script>document.getElementById("integrals").style.display="none";</script>';
+    }else{
+        echo '<script>document.getElementById("integrals").innerHTML='.$integral['counter'].';</script>';
+        echo '<script>document.getElementById("integral").style.display="none";</script>';
+    }
+
+    if($sharewifi != NULL){
+        echo '<script>document.getElementById("rig0").style.backgroundColor="#cccccc";</script>';
+    }
+    if($sharefrd != NULL){
+        echo '<script>document.getElementById("rig1").style.backgroundColor="#cccccc";</script>';
+    }
+}
+
+switch($type){
+    case 0 :
+        echo '<script>document.getElementById("rig4").style.backgroundColor="#cccccc";</script>';
+        echo '<script>document.getElementById("list4").onclick="return false";</script>';
+        break;
+    case 2 :
+        echo '<script>document.getElementById("rig5").style.backgroundColor="#cccccc";</script>';
+        echo '<script>document.getElementById("list5").onclick="return false";</script>';
+        break;
+    case 1 :
+        echo '<script>document.getElementById("rig4").style.backgroundColor="#cccccc";</script>';
+        echo '<script>document.getElementById("list4").onclick="return false";</script>';
+        echo '<script>document.getElementById("rig5").style.backgroundColor="#cccccc";</script>';
+        echo '<script>document.getElementById("list5").onclick="return false";</script>';
+        break;
+}
+?>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>积分兑换历史页面</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    </head>
+    <body>
+    	<!--导航-->
+    	<div class="nav">
+    		<div class="content">
+    	
+    		<div class="title">Exchange history</div>
+    		<div class="right"><div class="backico"></div></div>
+    	    <div class="back"></div>
+    		</div>
+    	</div>
+    	<!--导航结束-->
+ 
+    
+    	<!--兑奖活动信息-->
+    		<div id="content" style="margin-top: 0px;background: #F6F6F6;">
+
+    			<div class="content" style="background: #F6F6F6;margin-top: -10px;">
+
+    				<ul class="" style="margin-bottom: 15px;background: #FFFFFF;">
+    					<div class="left">
+    					<li class="img"><a href=""><img src="images/type1.jpg" alt="" /></a></li>
+    					</div>
+    					<div class="right">
+    					<li class="title"><a href="title">Voucher pulsa</a></li>
+    					<li class="describe">Voucher pulsaVoucher pulsaVou</li>
+    					<li class="usecoin"><div class="leftpoints"><div class="ico"></div><span>1000</span></div><div class="rightexchange"><a href="" class="goexchange succe">Exchanged</a></div></li>
+    					</div>
+    				</ul>
+    				
+    				<ul class="" style="margin-bottom: 10px;background: #FFFFFF;">
+    					<div class="left">
+    					<li class="img"><a href=""><img src="images/type2.jpg" alt="" /></a></li>
+    					</div>
+    					<div class="right">
+    					<li class="title"><a href="title">Voucher pulsa</a></li>
+    					<li class="describe">Voucher pulsaVoucher pulsaVou</li>
+    					<li class="usecoin"><div class="leftpoints"><div class="ico"></div><span>1000</span></div><div class="rightexchange"><a href="" class="goexchange succe">Exchanged</a></div></li>
+    					</div>
+    				</ul>
+    				
+    				<ul class="" style="margin-bottom: 10px;background: #FFFFFF;">
+    					<div class="left">
+    					<li class="img"><a href=""><img src="images/type3.jpg" alt="" /></a></li>
+    					</div>
+    					<div class="right">
+    					<li class="title"><a href="title">Voucher pulsa</a></li>
+    					<li class="describe">Voucher pulsaVoucher pulsaVou</li>
+    					<li class="usecoin"><div class="leftpoints"><div class="ico"></div><span>1000</span></div><div class="rightexchange"><a href="" class="goexchange fail">Sold out</a></div></li>
+    					</div>
+    				</ul>
+    				
+    				<ul class="" style="margin-bottom: 10px;background: #FFFFFF;">
+    					<div class="left">
+    					<li class="img"><a href=""><img src="images/type4.jpg" alt="" /></a></li>
+    					</div>
+    					<div class="right">
+    					<li class="title"><a href="title">Voucher pulsa</a></li>
+    					<li class="describe">Voucher pulsaVoucher pulsaVou</li>
+    					<li class="usecoin"><div class="leftpoints"><div class="ico"></div><span>1000</span></div><div class="rightexchange"><a href="" class="goexchange succe">Exchanged</a></div></li>
+    					</div>
+    				</ul>
+    				
+    			</div>
+    		</div>
+    	<!--兑奖活动信息结束-->
+    	<!--弹出框-->
+    	<div class="alert">
+    		<div class="title">Successfully Exchanged<div class="close"></div></div>
+    		
+    		<div class="content">
+    			<!--兑换成功提示内容-->
+    			<div class="okalert">
+    			恭喜您成功兑换<span class="goosname">【商品名】</span>,详情请在兑换记录查看。
+    			</div>
+    			<!--兑换成功提示内容结束-->
+    			<!--提示框内容-->
+    			<div class="tips">
+    				价格兑换失败，您的账号已在其他  手机登录
+    			</div>
+    			<!--提示内容结束-->
+    			<!--兑换成功提示-->
+    			<div class="checkbtn">Check it now</div>
+    			<!--兑换成功提示结束-->
+    			<!--提示操作按钮-->
+    			<div class="tipsbtn">
+    			<div class="sure">知道了</div>
+    			<div class="quit">重新登录</div>
+    			</div>
+    			<!--提示操作按钮结束-->
+    		</div>
+    	</div>
+    	<!--弹出框结束-->
+    	<!--遮罩层-->
+    	<div class="cover">
+    		
+    	</div>
+    	<!--遮罩层结束-->
+    	
+	</body>
+</html>

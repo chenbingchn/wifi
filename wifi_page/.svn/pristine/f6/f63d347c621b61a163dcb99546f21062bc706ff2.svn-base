@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, width=device-width">
+        <link rel="stylesheet" type="text/css" href="../web/css/share_find_style.css">
+        <title><?=$this->lang->line('title')?></title>
+    </head>
+    <body>
+        <div class="content">
+            <p><?=$this->lang->line('p1')?></p>
+            <img src="<?=$this->lang->line('img1')?>">
+            <p><?=$this->lang->line('p2')?></p>
+            <img src="<?=$this->lang->line('img2')?>">
+            <p><?=$this->lang->line('p3')?></p>
+        </div>
+        <div class="share_button" onclick="window.helper.shareIntent()"><?=$this->lang->line('button')?></div>
+    </body>
+</html>

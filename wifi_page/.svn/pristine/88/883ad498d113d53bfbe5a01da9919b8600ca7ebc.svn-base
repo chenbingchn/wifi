@@ -1,0 +1,13 @@
+<?php
+	$lang['title'] = 'How to share WiFI?';
+	$lang['p1'] = '1. When you connect to a WiFi like that, just click Share WiFi button to share the WiFi.';
+	$lang['p2'] ='You will get 100 Points after successfully sharing. Click My Shared WiFi for shared WiFi history.';
+	$lang['p3'] = '2. Or scroll down to find Password Required WiFi, click it.';
+	$lang['p4'] = 'Enter the password and connect to it. You will also get 100 Points after successfully sharing.';
+	$lang['p5'] = '3. When other users connect to your shared WiFi, you will earn 50 points for every new connector. The Points would limited to 1000 Points for every WiFi hotspot in every day.';
+	$lang ['img1'] = '../web/images/share_en_1.png';
+	$lang ['img2'] = '../web/images/share_en_2.png';
+	$lang ['img3'] = '../web/images/share_en_3.png';
+	$lang ['img4'] = '../web/images/share_en_4.png';
+	$lang['button'] = 'Share WiFi Now';
+?>

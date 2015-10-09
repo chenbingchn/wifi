@@ -1,0 +1,28 @@
+@charset "utf-8";
+body{
+ margin:0px;
+}
+a:link {
+    text-decoration: none;
+    color: #1C7887;
+}
+.laout:hover {
+    text-decoration: none;
+    color: #1C7887;
+    border-bottom:2px solid #1C7887;
+}
+
+/* Swiper Styles */
+.swiper-slide {
+	float: left;
+}
+.swiper1{
+    height: 60px;
+}
+/* IE10 Windows Phone 8 Fixes */
+.swiper-wp8-horizontal {
+	-ms-touch-action: pan-y;
+}
+.swiper-wp8-vertical {
+
+}

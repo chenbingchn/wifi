@@ -1,0 +1,33 @@
+<?php
+
+return [
+    'Points'=>'Poin',
+    'Points  Mall'=>'Poin Mall',
+    'Login'=>'Masuk',
+    'Exchange history'=>'History Penukaran',
+    'How to earn points'=>'Bagaimana cara mendapatkan poin',
+    'Sold out'=>'Habis',
+    'Exchange'=>'Penukaran',
+    'Exchange confirmation'=>'Konfirmasi Penukaran',
+    'Yes'=>'Ya',
+    'NO'=>'Tidak',
+    'Successfully Exchanged'=>'Penukaran Sukses',
+    'Check it now'=>'Lihat Sekarang',
+    'Exchange Failed'=>'Penukaran Gagal',
+    'You have exchanged for this item today. You can exchange for this item everyday for only once.'=>'Maaf, Anda telah menukarkan item tersebut hari ini. Anda hanya bisa menukarkan satu kali dalam sehari.',
+    'Insufficient Points'=>'Poin Tidak Cukup',
+    "You don't have enough Points to exchange for this prize. Earn more points and come back later."=>'Anda tidak memiliki Poin cukup untuk penukaran ini. Kumpulkan lagi Poin Anda dan silakan melakukan penukaran kembali.',
+    'Bind Now'=>'Daftarkan sekarang',
+    'Cancel'=>'Batal',
+    'It will cost you <span class="spend_count"></span> Points to exchange for the <span class="spend_name"></span> Are you sure?'=>'Pertukaran komoditas <span class="spend_name"></span> perlu akun ini  <span class="spend_count"></span> poin,Petukaran gak ?',
+    'Congratulation on exchanging for the <span class="spend_name"></span> successfully.Check Exchange History for more information.'=>'Selamat! Penukaran sebesar <span class="spend_name"></span> telah berhasil. Silakan cek history penukaran kamu untuk informasi lebih lanjut',
+    'Validity'=>'Masa Berlaku',
+    'to'=>'sampai',
+    'Item Description'=>'Deskripsi Item',
+    'How to exchange?'=>'Bagaimana cara melakukan penukaran?',
+    'Tips'=>'Tips',
+    'Earn points' => 'Dapatkan Poin',
+    'My points' => 'Poin Saya',
+    'How to earn points ?' => 'Bagaimana cara menghasilkan poin?',
+    'Current Activities' => 'Aktivitas Saat Ini'
+        ];

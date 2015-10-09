@@ -1,0 +1,16 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+a { color: #000;}
+a:focus { outline: 0;}
+a:link { text-decoration: none;}
+a:visited { text-decoration: none;}
+a:hover { color:#000; text-decoration: none;}
+a:active { text-decoration: none;}
+
+body{ background-color:#F0F3F5;}
+.main_tabel{background-color:#ffffff;width: 100%; border: 1px solid #cccccc; text-align: center;}
+.main_title{width: 150px;}
+.main_content{border-bottom: 1px #cccccc solid;border-top: 1px #cccccc solid; height: 40px;}
+.create_content{border-bottom: 1px #cccccc solid;border-top: 1px #cccccc solid; height: 40px; cursor:pointer;}

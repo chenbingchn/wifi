@@ -1,0 +1,205 @@
+<?php
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+?>
+<html>
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            body{
+                margin: 0px;
+                padding: 0px;
+                font-family: 微软雅黑;
+                background: #F6F6F6;
+            }
+            a{
+                text-decoration: none;
+                color: black;
+            }
+            .nav{
+                position: fixed;
+                top:0px;
+                background: #329519;
+                height: 46px;
+                width: 100%;
+                text-align: center;
+                line-height: 46px;
+                font-size: 18px;
+                color: white;
+                font-family: 微软雅黑;
+            }
+            .left_icon{
+                float: left;
+                padding-left: 3px;
+                padding-top: 8px;
+                position: absolute;
+            }
+            .activity{
+                /*background: white;*/
+                margin-top: 10px;
+            }
+            .activity-item{
+                height: 80px;
+                border-bottom: 1px solid #ddd;  
+                background: white;
+                /*border-top: 1px solid #ddd;*/  
+                /*margin-top:5px;*/
+                margin-bottom: 5px;
+            }
+            .activity-item .activity-left{
+                width: 130px;
+                /*border:1px solid red;*/
+                float: left;
+                height: 80px;
+            }
+            .activity-item .activity-right{
+                width: calc(100% - 130px);
+                width: -webkit-calc(100% - 130px);
+                width: -moz-calc(100% - 130px);
+                width: -ms-calc(100% - 130px);
+                /*width: -webkit-calc(100% - 120px);*/
+                /*border:1px solid yellow;*/
+                float: right;
+                height: 80px;
+            }
+            .activity-item .activity-content{
+                height: 50px;
+                padding-top:3px;
+                /*border:1px solid red;*/
+
+            }
+            .activity-item .activity-content .activity-title{
+                /*border:1px solid #999;*/
+                font-size:14px;
+
+            }
+            .activity-item .activity-content .activity-body{
+                /*border:1px solid #999;*/
+                font-size:10px;
+                color: #999;
+                padding-right: 10px;
+            }
+            .activity-item .activity-footer{
+                height: 30px;
+                /*border:1px solid green;*/
+            }
+            /*            .activity-item{
+                            margin-top: 10px;
+                            background: white;
+                        }
+                        .activity-item .left-item{
+                            width: 35%;
+                            width: 30%;
+                            float: left;
+                            vertical-align: middle;
+                            display: inline-block;
+                            height: 80px;
+                        }
+                        .activity-item .center-item{
+                            width: 40%;
+                            vertical-align: middle;
+                            display: inline-block;
+                        }
+                        .activity-item .right-item{
+                            width: 20%;
+                            vertical-align: middle;
+                            display: inline-block;
+                            color:#E8A76E
+                        }
+                        .activity-item .left-item img{
+                            display: block;
+                            margin: 5% auto;
+                            height: 70px;
+                            width: 90%;
+                        }
+                        .activity-item .center-item{
+                            font-size: 12px;
+                            text-align: center;
+                        }
+                        .activity-item .center-item .text-container{
+                            padding-top: 10px;
+                            padding-bottom: 10px;
+                            text-align: left;
+                            text-align: justify
+                        }*/
+            .right-item .button{
+                width: 90%;
+                background: #5ead00 ;
+                text-align: center;
+                color: #FAFAFA;
+                font-size: 14px;
+                border-radius: 3px;
+                margin: 0px auto;
+                height: 40px;
+                line-height: 40px;
+            }
+            .record_tips{
+                padding-top: 40%;
+                color: #999;
+                font-size: 18px;  
+            }
+            .record_tips a{
+                color: #F86800;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="nav">
+            <div class="left_icon" ><a href="<?= Yii::$app->urlManager->createUrl(['pointmall/index', 'user_id' => $user_id, 'imei' => $imei, 'access_token' => $access_token]) ?>"><img id="left" src="images/Left.png" height="30" /></a></div>
+            Exchange history
+        </div>
+        <div style="height:46px;"></div>
+        <?php if ($record): ?>
+            <div class="activity">
+                <?php foreach ($record as $v): ?>
+                    <div class="activity-item">
+                        <div class="activity-left">
+                            <a href="<?= Yii::$app->urlManager->createUrl(['pointmall/detail', 'id' => $v->good->id, 'user_id' => $user_id, 'imei' => $imei, 'access_token' => $access_token]) ?>"><img style="width:120px;height:70px;padding-top: 5px;padding-left:10px;" src="<?= $v->good->img_url ?>"/></a>
+                        </div>
+                        <div class="activity-right">
+                            <div class="activity-content" url="<?= Yii::$app->urlManager->createUrl(['pointmall/detail', 'id' => $v->good->id, 'user_id' => $user_id, 'imei' => $imei, 'access_token' => $access_token]) ?>">
+                                <div class="activity-title"><?= $v->good->Title ?></div>
+                                <div class="activity-body">
+                                    <?php
+                                    if (mb_strlen($v->good->Content) > 45) {
+                                        echo mb_substr($v->good->Content, 0, 45) . ".....";
+                                    } else {
+                                        echo $v->good->Content;
+                                    }
+                                    ?>
+                                </div>
+                            </div>
+                            <div class="activity-footer">
+                                <div style="float: left;font-size: 12px;color: #999;padding-top: 8px;">Time :<?= $v->buy_date ?></div>
+                                <div style="float: right;height:30px;line-height:30px;padding-left:3px;color:#F29C36;margin-right:10px;"><?= $v->good->discount ?> </div>
+                                <div style="float: right;height:30px;padding-top:7px;"><img style="width:16px;" src="images/icon/icon-2.png" ></div>
+                                <div style="clear:both"></div>
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        <?php else: ?>
+            <div class=" container record_tips"> 当前兑换记录为空，大量惊喜礼品正在折扣出售，前往 <a  href="<?= Yii::$app->urlManager->createUrl(['pointmall/index', 'user_id' => $user_id, 'imei' => $imei, 'access_token' => $access_token]) ?>">Point Mall</a> 查看</div>
+        <?php endif; ?>
+        <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+        <script src="js/jquery.min.js" type="text/javascript"></script>
+        <script src="js/bootstrap.min.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            $(function() {
+//                $('.left_icon').on('click', function() {
+//                    window.location.href = "backapp://back";
+//                });
+                $('.activity-content').on('click', function() {
+                    window.location.href = $(this).attr('url');
+                });
+            });
+        </script>
+    </body>
+</html>
+

@@ -1,0 +1,9 @@
+<?php
+	$lang['title'] = 'Cari Free WiFi';
+	$lang['p1'] = 'Seperti yang ditunjukkan pada gambar di bawah ini, kamu bisa pilih dengan cara klik pada nama WiFi yang ingin kamu hubungkan.';
+	$lang['p2'] ='Apabila kamu tidak menemukan koneksi WiFi, kamu bisa menggunakan WiFi Map untuk mencari Free WiFi. Gambar dengan icon kunci adalah contoh Free WiFi yang sudah bisa diakses. Klik rincian untuk lebih lanjut, gunakan lokasi lain dan pilih WiFi yang ingin kamu gunakan.';
+	$lang['p3'] = 'Jika hasil pencarian tidak berhasil karena belum ada yang share WiFi, kamu bisa menjadi orang pertama yang share WiFi pada lokasi tersebut. Dapatkan pulsa setiap kamu berbagi koneksi WiFi yang baru. <a href="http://wifiweb.enmonet.com/wifi_page/trunk/web/index.php?c=share&m=id">Sudah tahu bagaimana cara berbagi WiFi?</a>';
+	$lang ['img1'] = config_item('base_url') . 'images/find_id_1.jpg';
+	$lang ['img2'] = config_item('base_url') . 'images/find_id_2.jpg';
+	$lang['button'] = 'Share WiFi';
+?>

@@ -1,0 +1,44 @@
+@charset "utf-8";
+/*导航*/
+#nav{
+    position:relative;
+    padding-left: 0;
+    padding-right: 0;
+    background-color: #EEEEEE;
+    height: 40px;
+}
+.navs {
+    position:relative;
+    padding-top: 10px;
+    height:40px;
+}
+.navs li {
+    float:left;
+    display:inline;
+    height:26px;
+    line-height:26px;
+    width: 20%;
+}
+.navs li a {
+    padding:0 10px;
+    font-size:14px;
+    color:#6b6b6b;
+    font-weight:700;
+    text-decoration:none;
+}
+.navs li a:hover {
+    text-decoration:none;
+}
+.navs li.cur a {
+    color:#329519;
+    width:100px;
+}
+.navs .nav-line {
+    position:absolute;
+    border-bottom:2px solid #329519;
+    height:0;
+    overflow:hidden;
+    left:0;
+    bottom:0;
+    width: 20%;
+}

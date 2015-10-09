@@ -1,0 +1,139 @@
+<?php
+
+use yii\grid\GridView;
+use app\models\Account;
+use app\models\UseridHotspot;
+use app\models\BssidImei;
+use dosamigos\datepicker\DatePicker;
+use yii\widgets\ActiveForm;
+
+$this->registerJs("    
+    $(function(){
+        $('select[name=\"wifi_type\"]').on('change',function(){
+            if($(this).val()==0&&$(this).val()!=''){
+                $('.has-password').show();
+            }else{
+                $('.has-password').hide();
+                $('.has-password').find('select option:first').attr(\"selected\",true);
+            }
+        });
+    });");
+?>
+<div class="container">
+    <?php $form = ActiveForm::begin(['method' => 'get']); ?>
+        <div class="row">
+            <div  class=" col-md-3"><label >用户名</label><input type="text" name="user_name" class="form-control" value="<?= isset($_GET['user_name'])?$_GET['user_name']:"";?>"></div>
+            <div  class=" col-md-3"><label >手机号</label><input type="text" name="phone" class="form-control" value="<?= isset($_GET['phone'])?$_GET['phone']:"";?>"></div>
+            <div  class=" col-md-3"><label >IMEI</label><input type="text" name="imei" class="form-control" value="<?= isset($_GET['imei'])?$_GET['imei']:"";?>"></div>
+            <div  class=" col-md-3"><label >wifi名称</label><input type="text" name="wifi_name" class="form-control" value="<?= isset($_GET['wifi_name'])?$_GET['wifi_name']:"";?>"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <label>开始时间</label>
+                <?=
+                DatePicker::widget([
+                    'name' => 'start_time',
+                    'value'=>  isset($_GET['start_time'])?$_GET['start_time']:"",
+                    'clientOptions' => [
+                        'format' => 'yyyy-mm-dd',
+                    ]
+                ]);
+                ?>
+            </div>
+            <div class="col-md-6">
+                <label>结束时间</label>
+                <?=
+                DatePicker::widget([
+                    'name' => 'end_time',
+                    'value'=>  isset($_GET['end_time'])?$_GET['end_time']:"",
+                    'clientOptions' => [
+                        'format' => 'yyyy-mm-dd',
+                    ]
+                ]);
+                ?>
+            </div>
+        </div>
+    <div class="row">
+        <div  class="col-md-4 form-group">
+            <label>wifi来源</label>
+            <select name="source" class="form-control">
+                <option value="0" <?php if(isset($_GET['source'])&&$_GET['source']==0){ echo "selected";}?> >分享的</option>
+                <option value="1" <?php if(isset($_GET['source'])&&$_GET['source']==1){ echo "selected";}?>>app收集并上传</option>
+                <option value="2" <?php if(isset($_GET['source'])&&$_GET['source']==2){ echo "selected";}?>>其他来源并导入</option>
+                <option value="3" <?php if(isset($_GET['source'])&&$_GET['source']==3){ echo "selected";}?>>从扫码版同步过来</option>
+            </select>
+        </div>
+        
+        <div  class="col-md-4 form-group">
+            <label>wifi类型</label>
+            <select name="wifi_type" class="form-control">
+                <option value="">请选择</option>
+                <option value="0" <?php if(isset($_GET['wifi_type'])&&$_GET['wifi_type']!=""&&$_GET['wifi_type']==0){ echo "selected";}?> > 需要密码的wifi</option>
+                <option value="1" <?php if(isset($_GET['wifi_type'])&&$_GET['wifi_type']==1){ echo "selected";}?>>需要登陆验证的wifi</option>
+                <option value="3" <?php if(isset($_GET['wifi_type'])&&$_GET['wifi_type']==3){ echo "selected";}?>>无密码免费wifi</option>
+                <option value="8" <?php if(isset($_GET['wifi_type'])&&$_GET['wifi_type']==8){ echo "selected";}?>>企业wifi</option>
+            </select>
+        </div>
+        
+        <div  class="col-md-4 form-group has-password" style="display: <?php if(isset($_GET['wifi_type'])&&$_GET['wifi_type']!=""&&$_GET['wifi_type']==0){ echo "";}else{ echo "none";}?>">
+            <label>是否有密码</label>
+            <select name="flag" class="form-control">
+                <option value="">请选择</option>
+                <option value="0" <?php if(isset($_GET['flag'])&&$_GET['flag']!=""&&$_GET['flag']==0){ echo "selected";}?> >有密码</option>
+                <option value="1" <?php if(isset($_GET['flag'])&&$_GET['flag']==1){ echo "selected";}?>>没有密码</option>
+            </select>
+        </div>
+    </div>
+    <div style="margin-top:10px;margin-bottom:10px" class="pull-right">
+        <input type="submit" value="查询" class="btn btn-success">
+    </div>
+    <?php ActiveForm::end(); ?>
+
+    <?=
+    GridView::widget([
+        'dataProvider' => $dataProvider,
+        'columns' => [
+            [
+                'label' => '用户名',
+                'value' => function($model) {
+            if ($model->user_id) {
+                if ($model->user_id == "-1") {
+                    return "<span class='text-danger'>未登录用户</span>";
+                } else {
+                    return "<span class='text-success'>" . Account::getUsernameByUserId($model->user_id) . "</span>";
+                }
+            } else {
+                return "";
+            }
+        },
+                'format' => 'raw'
+            ],
+            [
+                'label' => '手机号',
+                'value' => function($model) {
+            return Account::getPhoneByUserId($model->user_id) != null ? Account::getPhoneByUserId($model->user_id) : "";
+        }
+            ],
+            'imei',
+            'bssid',
+            'ssid',
+//            [
+//                'label' => 'wifi类型',
+//                'value' => function($model) {
+//            $typeArray = ['0' => 'NEEDPASSWROD', '1' => 'AUTHNEEDED', '3' => 'FREE', '8' => 'PRIVATEWIFI'];
+//            return isset($typeArray[$model->type]) ? $typeArray[$model->type] : "";
+//        }
+//            ],
+            'last_shared_at',
+//            'created_at',
+            [
+                'label' => '连接数',
+                'value' => function($model) {
+            return BssidImei::getConnectNumByBssid($model->bssid);
+        }
+            ]
+        ]
+    ]);
+    ?>
+</div>
+

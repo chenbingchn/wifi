@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, width=device-width">
+		<title>Hadiah menarik menanti Anda!</title>
+		<link rel="stylesheet" type="text/css" href="<?=config_item('base_url')?>css/common/base.css">
+		<link rel="stylesheet" type="text/css" href="<?=config_item('base_url')?>css/prize/style.css">
+	</head>
+	<body>
+		 <div id="page_center">
+		 	<div id="prize_content">
+		 		<p id="title">Berikut adalah daftar pemenang yang beruntung:</p>
+		 		<p class="prize_title">1. Keuntungan Harian:</p>
+		 		<ul class="mobile_list">
+			 		<?php foreach($daily_profit as $row): ?>
+						<?php echo "<li>".substr_replace($row->mobile, '****', 3, 4)."</li>"; ?>
+					<?php endforeach; ?>
+		 		</ul>
+		 		<p class="prize_title">2. Hadiah Harian:</p>
+		 		<ul class="mobile_list">
+			 		<?php foreach($daily_prizes as $row): ?>
+			 			<?php echo "<li>".substr_replace($row->mobile, '****', 3, 4)."</li>"; ?>
+					<?php endforeach; ?>
+		 		</ul>
+		 		<p class="prize_title">3. Hadiah Utama:</p>
+		 		<ul class="mobile_list">
+			 		<?php foreach($grand_prize as $row): ?>
+			 			<?php echo "<li>".substr_replace($row->mobile, '****', 3, 4)."</li>"; ?>
+					<?php endforeach; ?>
+		 		</ul>
+		 	</div>
+		 </div>
+		 
+		 <div id="page_bottom">
+		 	<div id="bottom_content">
+		 		<div id="left_text">
+				 	<p>1. Apabila kamu termasuk salah satu dari daftar pemenang yang beruntung, silakan add Official Akun LINE Enjoy WiFi (ID: enjoywifi)</p>
+				 	<p>2. Atau kamu juga bisa memberi tahu kami melalui comment/pesan di Official Akun Facebook <a href="https://www.facebook.com/enjoyfreewifi">(Enjoy WiFi-Free WiFi Connect)</a>.</p>
+		 		</div>
+		 		<div id="right_pic">
+		 			<img src="<?=config_item('base_url')?>/images/prize/qr.jpg"> 
+		 		</div>
+		 		<div class="clearfix"></div>
+		 	</div>
+		 </div>
+		 
+
+	</body>
+</html>

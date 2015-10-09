@@ -1,0 +1,242 @@
+<?php
+use app\models\Integral;
+?>
+<html>
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            body{
+                margin: 0px;
+                padding: 0px;
+                font-family: 微软雅黑;
+                background: #F5F5F5
+            }
+            a{
+                text-decoration: none;
+                color: black;
+            }
+            .nav{
+                background: #1c8a00;
+                height: 46px;
+                width: 100%;
+                text-align: center;
+                line-height: 46px;
+                font-size: 20px;
+                color: white;
+                font-family: 微软雅黑;
+            }
+            .user-info{
+                background: white;
+                height: 60px;
+                line-height: 60px;
+                border-bottom: 1px solid #ddd;
+            }
+            .user-info .info{
+                float: left;
+                padding-left: 10px;
+            }
+            .user-info .info img{
+                height: 40px;
+                margin-top: 10px;
+                border-radius: 50px;
+            }
+            .user-info  .user-name{
+                float:left;
+                padding-left:10px;
+            }
+            .user-info .point{
+                float: right;
+                text-align: right;
+                padding-right: 20px;
+            }
+            .user-info .point-img{
+                float:right;
+                padding-right:5px;
+            }
+            .user-info .point-img img{
+                height: 20px;
+                margin-top: 20px;
+                border-radius: 50px;
+            }
+            .point-banner{
+                background: white;
+                text-align: center;
+                font-size: 18px;
+                line-height: 50px;
+                height: 50px;
+                color: #F1C297;
+                border-bottom: 1px solid #ddd;
+            }
+            .guidance{
+                background: white;
+                border-bottom: 1px solid #ddd;
+                height: 50px;     
+                font-size: 12px;
+            }
+            .guidance .left-guidance,.right-guidance{
+                float: left;
+                line-height: 50px;
+                height: 50px;
+            }
+            .guidance .left-guidance{
+                border-right: 1px solid #ddd;
+                width: 50%;
+            }
+            .left-guidance img,.right-guidance img {
+                height:30px;
+                margin-top: 10px;
+                padding-left: 10px;
+                display: block;
+                float:left;
+            }
+            .activity{
+                background: white;
+                margin-top: 10px;
+            }
+            .activity-head{
+                height: 40px;
+                line-height: 40px;
+                border-bottom: 1px solid #ddd;
+            }
+            .activity-head .img {
+                height:26px;
+                margin-top: 7px;
+                display: block;
+                float:left;
+                line-height: 26px;
+                margin-left: 10px;
+                background: url('images/icon/ic4.png');
+                color: white;
+                border-radius: 5px;
+                font-size: 12px;
+            }
+            .activity-item{
+                /*height: 80px;*/
+                border-bottom: 1px solid #ddd;
+            }
+            .activity-item .left-item,.center-item,.right-item{
+                width: 32%;
+                /*width: 30%;*/
+                /*float: left;*/
+                vertical-align: middle;
+                display: inline-block;
+                /*height: 80px;*/
+            }
+            .activity-item .left-item img{
+                display: block;
+                margin: 5% auto;
+                /*height: 70px;*/
+                width: 90%;
+            }
+            .activity-item .center-item{
+                font-size: 12px;
+                text-align: center;
+            }
+            .activity-item .center-item .text-container{
+                padding-top: 10px;
+                padding-bottom: 10px;
+                text-align: left;
+                text-align: justify
+            }
+            .right-item .button{
+                width: 90%;
+                background: #1c8a00;
+                text-align: center;
+                color: #FAFAFA;
+                font-size: 14px;
+                border-radius: 10px;
+                margin: 0px auto;
+                height: 40px;
+                line-height: 40px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="nav">Point Mall</div>
+
+        <?php if ($user) { ?>
+            <div class="user-info">
+                <div class="info">
+                    <img src="<?= $user->avatar ?>"/>
+                </div>
+                <div class="user-name"><?= $user->user_name ?></div>
+                <div class="point"><?= $user->score->counter ?></div>
+                <div class="point-img">
+                    <img src="images/icon/ic5.png"/>
+                </div>
+            </div>
+        <?php } else { ?>
+            <div class="user-info">
+                <div class="info">
+                    <img src="images/icon/ic2.png"/>
+                </div>
+                <div class="user-name login">Login</div>
+                <div class="point"></div>
+                <div class="point-img">
+                    <img src="images/icon/ic5.png"/>
+                </div>
+            </div>
+        <?php } ?>
+        <div class="point-banner">
+            十倍积分活动进行中...
+        </div>
+
+        <div class="guidance">
+            <div class="left-guidance">
+                <img src="images/icon/ic.png"/>
+                <?php if ($user) { ?>
+                    <div style="float:left;height:50px;line-height: 50px;margin-left: 5px;"><a href="<?= Yii::$app->urlManager->createUrl('pointmall/history') ?>">Exchange history</a></div>
+                <?php } else { ?>
+                    <div style="float:left;height:50px;line-height: 50px;margin-left: 5px;"><a class="login">Exchange history</a></div>
+                <?php } ?>
+            </div>
+            <div class="right-guidance">
+                <img src="images/icon/ic1.png"/>
+                <div style="float:left;height:50px;line-height: 50px;margin-left: 5px;">How to earn points</div>
+            </div>
+        </div>
+
+        <div class="activity">
+            <?php foreach ($integral_cate as $k => $v): ?>
+                <div class="activity-head">
+                    <div class="img"><?= $v ?></div>
+                    <div style="float:left;height:40px;line-height: 40px;margin-left: 10px;color:#E8A76E"><?= $v ?>(<?= Integral::getCatNumByCatId($k); ?>)</div>
+                </div>
+                <div class="activity-List">
+                    <?php foreach (Integral::getIntegralByCatId($k) as $v): ?>
+                        <div class="activity-item">
+                            <div class="left-item">
+                                <img src="<?= $v->img_url ?>"/>
+                            </div>
+                            <div class="center-item">
+                                <div class="text-container">
+                                    <div style="font-size:14px"><?= $v->Title ?></div>
+                                    <div style="color:#999;margin-top: 5px;"><?= $v->Content ?></div>
+                                    <div style="color:#E8A76E;margin-top: 5px;">
+                                        <div style="float: left;margin:0px auto;"><img src="images/icon/ic6.png" ></div>
+                                        <div style="float: left;height:23px;margin-left:3px;line-height: 23px;"><?= $v->discount ?> poniter</div>
+                                        <div style="clear:both"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="right-item">
+                                <div class="button <?php if(!$user){ echo 'login';}?>">Exchanged</div>
+                            </div>
+                            <div style="clear: both"></div>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </body>
+    <script src="js/jquery.min.js" type="text/javascript"></script>
+    <script>
+        $(function(){
+            $('.login').on('click',function(){
+//                alert(1);
+            });
+        })
+    </script>
+</html>

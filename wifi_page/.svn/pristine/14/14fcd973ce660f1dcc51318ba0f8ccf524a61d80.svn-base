@@ -1,0 +1,16 @@
+<?php
+	class Find extends CI_Controller 
+	{
+		public function index()
+		{
+			$this->lang->load('find','english');
+			$this->load->view('find');
+		}
+
+		public function id()
+		{
+			$this->lang->load('find','indonesian');
+			$this->load->view('find');
+		}
+	}
+?>

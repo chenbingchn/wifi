@@ -1,0 +1,14 @@
+<?php
+	class Prize extends CI_Controller {
+		public function index() {
+			$this->load->view('prize/index');
+		}
+
+		public function test() {
+			$this->load->view('prize/test');
+		}
+	}
+
+
+
+?>

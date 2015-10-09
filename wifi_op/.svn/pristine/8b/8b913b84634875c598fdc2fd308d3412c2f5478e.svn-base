@@ -1,0 +1,130 @@
+<?php
+
+namespace app\models;
+
+use Yii;
+
+/**
+ * This is the model class for table "account".
+ *
+ * @property string $user_id
+ * @property string $email
+ * @property string $user_name
+ * @property string $password
+ * @property string $phone_number
+ * @property string $avatar
+ * @property string $imei
+ * @property integer $age
+ * @property string $created_at
+ * @property integer $gender
+ * @property string $version
+ * @property string $product_model
+ */
+class Account extends \yii\db\ActiveRecord {
+
+    /**
+     * @inheritdoc
+     */
+    public static function tableName() {
+        return 'account';
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function rules() {
+        return [
+            [['user_id'], 'required'],
+            [['user_id', 'age', 'gender'], 'integer'],
+            [['created_at','last_active_time'], 'safe'],
+            [['email', 'user_name', 'imei', 'product_model'], 'string', 'max' => 32],
+            [['password'], 'string', 'max' => 128],
+            [['phone_number'], 'string', 'max' => 16],
+            [['avatar'], 'string', 'max' => 256],
+            [['version'], 'string', 'max' => 10],
+            [['email'], 'unique'],
+            [['phone_number'], 'unique']
+        ];
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function attributeLabels() {
+        return [
+            'user_id' => '用户ID',
+            'email' => '邮箱',
+            'user_name' => '用户名',
+            'password' => '密码',
+            'phone_number' => '手机号码',
+            'avatar' => '头像',
+            'imei' => 'Imei',
+            'age' => '年龄',
+            'created_at' => '创建时间',
+            'gender' => '性别',
+            'version' => '版本',
+            'product_model' => '机型',
+            'last_active_time' => '最后登陆时间',
+        ];
+    }
+
+    public function getScore() {
+        return $this->hasOne(UseridScore::className(), ['id' => 'user_id']);
+    }
+
+    public function getEarnScoreByDate($beignDate = NULL, $endDate = NULL) {
+        if (!$beignDate) {
+            $beignDate = date('Y-m-d H:i:s', strtotime(date('Y-m-d')));
+        }
+        if (!$endDate) {
+            $endDate = date('Y-m-d H:i:s', strtotime(date('Y-m-d')) + 3600 * 24);
+        }
+        $model = new ScoreRecord;
+        $score = $model->find()->andFilterWhere(['=', 'user_id', $this->user_id])->andFilterWhere(['>', 'created_at', $beignDate])->andFilterWhere(['<', 'created_at', $endDate])->sum('score');
+        return $score?$score:0;
+    }
+
+    public function getSpendScoreByDate($beignDate = NULL, $endDate = NULL) {
+        if (!$beignDate) {
+            $beignDate = date('Y-m-d H:i:s', strtotime(date('Y-m-d')));
+        }
+        if (!$endDate) {
+            $endDate = date('Y-m-d H:i:s', strtotime(date('Y-m-d')) + 3600 * 24);
+        }
+        $model = new Integralrecord;
+        $bargin_points = $model->find()->andFilterWhere(['=', 'user_id', $this->user_id])->andFilterWhere(['>', 'buy_time', $beignDate])->andFilterWhere(['<', 'buy_time', $endDate])->sum('bargin_points');
+        return $bargin_points?$bargin_points:0;
+    }
+    
+    public static function getUsernameByUserId($userId){
+        if(!$userId){
+            return null;
+        }
+        $user = self::getUserByUserId($userId);
+        if($user){
+            return $user->user_name;
+        }
+    }
+    
+    public static function getPhoneByUserId($userId){
+        if(!$userId){
+            return null;
+        }
+        $user = self::getUserByUserId($userId);
+        if($user){
+            return $user->phone_number;
+        }
+    }
+    
+    public static function getUserByUserId($userId){
+        if(!$userId){
+            return null;
+        }
+        return self::find()->andFilterWhere(['=','user_id',$userId])->one();
+    }
+
+    public function getInformation(){
+        return $this->hasOne(Imeiuserbasicinfo::className(),['imei' => 'imei']);
+    }
+
+}

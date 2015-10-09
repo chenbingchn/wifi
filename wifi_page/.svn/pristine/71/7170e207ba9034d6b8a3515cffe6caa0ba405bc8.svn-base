@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, width=device-width">
+        <link rel="stylesheet" type="text/css" href="../web/css/share_find_style.css">
+        <title><?=$this->lang->line('title')?></title>
+    </head>
+    <body>
+        <div class="nav">
+            <div class="icon-left" onclick="rePage()"><img src="../web/images/back_left.png" width="30px";></div>
+            <div class="nav_content text-center"><?=$this->lang->line('title')?></div>
+        </div>
+        <div class="content">
+            <p><?=$this->lang->line('p1')?></p>
+            <img src="<?=$this->lang->line('img1')?>">
+            <p><?=$this->lang->line('p2')?></p>
+            <img src="<?=$this->lang->line('img2')?>">
+            <p><?=$this->lang->line('p3')?></p>
+            <img src="<?=$this->lang->line('img3')?>">
+            <p><?=$this->lang->line('p4')?></p>
+            <img src="<?=$this->lang->line('img4')?>">
+            <p><?=$this->lang->line('p5')?></p>
+        </div>
+        <div class="share_button" onclick=""><?=$this->lang->line('button')?></div>
+        <script>
+            function rePage(){
+                window.location.href="backapp://back";
+            }
+        </script>
+    </body>
+</html>

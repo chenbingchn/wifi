@@ -1,0 +1,156 @@
+<?php
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+?>
+<html>
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            body{
+                margin: 0px;
+                padding: 0px;
+                font-family: 微软雅黑;
+                background: #F5F5F5
+            }
+            a{
+                text-decoration: none;
+                color: black;
+            }
+            .nav{
+                background: #1c8a00;
+                height: 46px;
+                width: 100%;
+                text-align: center;
+                line-height: 46px;
+                font-size: 20px;
+                color: white;
+                font-family: 微软雅黑;
+            }
+            .goods_info{
+                color: #666;
+                height: 50px;
+                border-bottom: 1px solid #ddd;
+            }
+            .goods_info .goods_name{
+                height: 50px;
+                line-height: 50px;
+                float: left;
+                padding-left: 20px;
+            }
+            .goods_info .goods_ponit{
+                float:right;
+                height: 50px;
+                font-size: 12px;
+                text-align: center;
+                margin-right: 20px;
+            }
+            .goods_info .goods_ponit .curr_point{
+                margin-top: 5px;
+                color: #E7A76F;
+                font-size: 16px;
+            }
+            .goods_info .goods_ponit .ori_point{
+                color: #999;
+                text-decoration:line-through;
+            }
+            .valid_date{
+                color: #666;
+                height: 30px;
+                line-height: 30px;
+                border-bottom: 1px solid #ddd;
+                padding-left: 20px;
+
+            }
+            .content{
+                margin-top: 10px;
+                background: white;
+                margin-bottom: 10px;
+            }
+            .content_head{
+                height: 40px;
+                line-height: 40px;
+                border-bottom: 1px solid #ddd;
+            }
+            .content_head .img {
+                height:26px;
+                width: 26px;
+                margin-top: 7px;
+                display: block;
+                float:left;
+                line-height: 26px;
+                margin-left: 20px;
+                background: url('images/icon/ic8.png');
+                color: white;
+                border-radius: 5px;
+                font-size: 12px;
+            }
+            .content_body{
+                padding-left: 20px;
+                padding-top: 5px;
+                text-align: justify;
+                padding-right: 10px;
+                padding-bottom: 20px;
+            }
+            .button{
+                width: 90%;
+                position: fixed;
+                bottom: 20px;
+                background: #1c8a00;
+                height: 30px;
+                line-height: 30px;
+                text-align: center;
+                left: 5%;
+                border-radius: 10px;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="nav">商品名称</div>
+        <div class="img">
+            <img width="100%" src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3042410010,1849246464&fm=116&gp=0.jpg">
+        </div>
+
+        <div class="goods_info">
+            <div class="goods_name">商品名称</div>
+            <div class="goods_ponit">
+                <div class="curr_point">3000 ponints</div>
+                <div class="ori_point">5000 ponints</div>
+            </div>
+        </div>
+
+        <div class="valid_date">
+            Valid Date:<span style="font-size:14px;color:#999;"> 2015-09-01 至 2015-12-01</span>
+        </div>
+
+        <div class="content">
+            <div class="content_head">
+                <div class="img"></div>
+                <div style="float:left;height:40px;line-height: 40px;margin-left: 10px;color:#E8A76E">Use for exchange</div>
+            </div>
+            <div class="content_body">
+                <p>1. hellwo wor ldhe llwo wor ldhellwo wor ldhellwo world</p>
+                <p>2. hellwo wor ldhe llwo wor ldhellwo wor ldhellwo world</p>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="content_head">
+                <div class="img"></div>
+                <div style="float:left;height:40px;line-height: 40px;margin-left: 10px;color:#E8A76E">Tips for impotrant</div>
+            </div>
+            <div class="content_body">
+                <p>1. hellwo wor ldhe llwo wor ldhellwo wor ldhellwo world</p>
+                <p>2. hellwo wor ldhe llwo wor ldhellwo wor ldhellwo world</p>
+            </div>
+        </div>
+        
+        <div class="button">button</div>
+    </body>
+</html>
+

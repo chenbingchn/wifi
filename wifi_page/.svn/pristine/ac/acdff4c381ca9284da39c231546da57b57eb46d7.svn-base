@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, width=device-width">
+		<title>中奖结果公布</title>
+		<link rel="stylesheet" type="text/css" href="<?=config_item('base_url')?>css/prize_result/prize_style.css">
+	</head>
+	<body>
+		<div>
+			<img src="<?=config_item('base_url')?>images/prize_result/header.jpg" id="header">
+		</div>
+		<div id="prize_list">
+			<p>1. 得到Daily Profit大奖的有：</p>
+			<?php foreach($daily_profit as $row): ?>
+				<span class="mobile_item">
+					<?php echo substr_replace($row->mobile, '****', 3, 4); ?> 
+				</span>
+			<?php endforeach; ?>
+
+			<p>2. 得到Daily Prizes大奖的有：</p>
+			<?php foreach($daily_prizes as $row): ?>
+				<span class="mobile_item">
+					<?php echo substr_replace($row->mobile, '****', 3, 4); ?> 
+				</span>
+			<?php endforeach; ?>
+
+			<p>3. 得到Grand Prize大奖的有：</p>
+			<?php foreach($grand_prize as $row): ?>
+				<span class="mobile_item">
+					<?php echo substr_replace($row->mobile, '****', 3, 4); ?> 
+				</span>
+			<?php endforeach; ?>
+		</div>
+		
+		<div id="footer">
+			<ol id="left_text">
+				<li>We use the information we collect from all of our services to provide, maintain, protect and improve them, to develop new ones, and to protect Google and our users.</li>
+				<li>We also use this information to offer you tailored content – like giving you more relevant search results and ads.</li>
+			</ol>
+<!-- 			<img src="../../web/images/prize_result/qr.png" id="right_qr"> -->
+		</div>
+		
+
+	</body>
+</html>

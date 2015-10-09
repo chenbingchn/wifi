@@ -1,0 +1,40 @@
+<?php
+    defined('BASEPATH') OR exit('No direct script access allowed');
+    class Wifi extends CI_Controller {
+
+        public function find_wifi_en($page = 'find_wifi_en') {
+
+            $this->load->helper('url');
+        	if ( ! file_exists(APPPATH.'/views/wifi/'.$page.'.php')) {
+                echo "string";
+            	// show_404();
+        	}
+        	$this->load->view('wifi/'.$page);
+        }
+
+        public function find_wifi_id($page = 'find_wifi_id') {
+            $this->load->helper('url');
+        	if ( ! file_exists(APPPATH.'/views/wifi/'.$page.'.php')) {
+            	show_404();
+        	}
+        	$this->load->view('wifi/'.$page);
+        }
+
+        public function share_wifi_en($page = 'share_wifi_en') {
+            $this->load->helper('url');
+        	if ( ! file_exists(APPPATH.'/views/wifi/'.$page.'.php')) {
+            	show_404();
+        	}
+        	$this->load->view('wifi/'.$page);
+        }
+
+        public function share_wifi_id($page = 'share_wifi_id') {
+            $this->load->helper('url');
+        	if ( ! file_exists(APPPATH.'/views/wifi/'.$page.'.php')) {
+            	show_404();
+        	}
+        	$this->load->view('wifi/'.$page);
+        }
+    }
+
+?>

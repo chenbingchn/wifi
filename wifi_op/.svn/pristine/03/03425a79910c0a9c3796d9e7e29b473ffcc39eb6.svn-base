@@ -1,0 +1,107 @@
+<link rel="stylesheet" type="text/css" href="css/demo.css" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<link href="css/bootstrap.min.css" rel="stylesheet">
+
+<script>
+    function test( a ){
+//        window.location.href=a;
+        window.send.getUrl(a);
+    }
+    function down(){
+        document.getElementById('ss').scrollIntoView();
+    }
+    function mclass(b,cot){
+        var c=b;
+        var cots=cot;
+        var a=document.getElementById("content"+c);
+        if(a.style.display == ""){
+            document.getElementById("content"+c).style.display ="none";
+            document.getElementById("img"+c).src="images/down-arrow.png";
+            document.getElementById("off"+c).style.paddingTop="14px";
+            document.getElementById('title'+c).style.backgroundColor="#fff";
+        }else{
+            document.getElementById("content"+c).style.display ="";
+            document.getElementById("img"+c).src="images/cha.png";
+            document.getElementById("off"+c).style.paddingTop="10px";
+            document.getElementById("hr"+c).style.display ="none";
+            document.getElementById('title'+c).scrollIntoView();
+            document.getElementById('title'+c).style.backgroundColor="#F8F8F8";
+            for(var list=0;list<cots;list++){
+                if(list == c){
+                    continue;
+                }
+                document.getElementById("content"+list).style.display ="none";
+                document.getElementById("img"+list).src="images/down-arrow.png";
+                document.getElementById("off"+list).style.paddingTop="14px";
+                document.getElementById('title'+list).style.backgroundColor="#fff";
+            }
+        }
+    }
+</script>
+<div style="float: left; width: 100%;">
+    <?php
+    //弄一个判断是否取language，如果没有传默认值
+    if(!isset($language)) {
+        $lang = 'en';
+    }
+    else {
+        $lang=$_GET['language'];
+    }
+
+    switch($lang){
+        case 'zh':
+            $lange="product".$lang;
+            $langC="Classname".$lang;
+            $langT="title".$lang;
+            break;
+        case 'yn':
+            $lange="product".$lang;
+            $langC="Classname".$lang;
+            $langT="title".$lang;
+            break;
+        default:
+            $lange="product";
+            $langC="Classname";
+            $langT="title";
+    }
+
+    foreach($find as $f=>$d) {
+    $url=$d['url'];
+    ?>
+    <div class="toplogo" align="center"  onclick="test('<?=$url?>')">
+        <div><img src="<?=$d['app_img']?>" ></div>
+        <div><?=$d[$lange]?></div>
+    </div>
+    <?php
+    }
+    ?>
+</div>
+
+<div class="main">
+    <hr class="hrstyle">
+<?php foreach($class as $k=>$v){?>
+    <?php $cot=count($class);?>
+    <div class="lis">
+        <div id="title<?=$k?>"  onclick="mclass(<?=$k?>,<?=$cot?>)" class="mainclass">
+            <div class="icon"><img src="<?=$v['icon']?>" width="22"> </div>
+            <div class="maintitle"><?=$v[$langC]?></div>
+            <div class="titleswitch" id="off<?=$k?>" ><img id="img<?=$k?>" src="images/down-arrow.png"> </div>
+        </div>
+        <div id="content<?=$k?>" style="display: none;" class="listheight">
+            <hr id="hr<?=$k?>" class="hrstyle">
+            <table width="100%" style="background-color: #F8F8F8;">
+                <tr>
+                    <td>
+<?php foreach($categorys as $c=>$r){?>
+    <?php if($r['pid'] == $v['pid']){?>
+                        <div class="maincategory" onclick="test('<?=$r['url']?>')"><?=$r[$langT]?></div>
+    <?php }?>
+<?php }?>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <hr class="hrstyle">
+<?php }?>
+</div>

@@ -1,0 +1,181 @@
+<?php
+
+namespace app\controllers;
+
+use Yii;
+use app\models\Operation;
+use yii\filters\AccessControl;
+use app\models\search\OperationSearch;
+use yii\web\Controller;
+use yii\web\NotFoundHttpException;
+use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
+use app\components\TController;
+
+/**
+ * OperationController implements the CRUD actions for Operation model.
+ */
+class OperationController extends TController
+{
+//    public function behaviors()
+//    {
+//        return [
+//            'access' => [
+//                'class' => AccessControl::className(),
+//                'only' => ['logout', 'signup','index','view','create','update','delete'],
+//                'rules' => [
+//                    [
+//                        'actions' => ['signup'],
+//                        'allow' => true,
+//                        'roles' => ['?'],
+//                    ],
+//                    [
+//                        'actions' => ['logout','index','view','create','update','delete'],
+//                        'allow' => true,
+//                        'roles' => ['@'],
+//                    ],
+//                ],
+//            ],
+//            'verbs' => [
+//                'class' => VerbFilter::className(),
+//                'actions' => [
+//                    'delete' => ['post'],
+//                ],
+//            ],
+//        ];
+//    }
+
+    /**
+     * Lists all Operation models.
+     * @return mixed
+     * @desc 登录运营详情列表
+     */
+    public function actionIndex()
+    {
+        $searchModel = new OperationSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        return $this->render('index', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
+    }
+
+    /**
+     * Displays a single Operation model.
+     * @param integer $id
+     * @return mixed
+     * @desc 显示登录运营详情
+     */
+    public function actionView($id)
+    {
+        return $this->render('view', [
+            'model' => $this->findModel($id),
+        ]);
+    }
+
+    /**
+     * Creates a new Operation model.
+     * If creation is successful, the browser will be redirected to the 'view' page.
+     * @return mixed
+     * @desc 创建登录运营详情
+     */
+    public function actionCreate()
+    {
+        $model = new Operation();
+
+        if ($model->load(Yii::$app->request->post())) {
+
+            if($model->images = UploadedFile::getInstance($model, 'images') !=NULL) {
+                $model->images = UploadedFile::getInstance($model, 'images');
+                $name = $model->images->baseName;
+                $image = UploadedFile::getInstance($model, 'images');
+                $ext = $image->getExtension();
+                $imageName = $name . '.' . $ext;
+                if (!is_dir('operation/')) mkdir('operation/');
+                $path = Yii::$app->request->hostInfo.Yii::$app->request->baseUrl.'/';
+                $image->saveAs('operation/'.$imageName);
+                $model->images = $path.'operation/'.$imageName;
+            }
+            $model->save();
+            return $this->redirect(['view', 'id' => $model->id]);
+        } else {
+            return $this->render('create', [
+                'model' => $model,
+            ]);
+        }
+    }
+
+    /**
+     * Updates an existing Operation model.
+     * If update is successful, the browser will be redirected to the 'view' page.
+     * @param integer $id
+     * @return mixed
+     * @desc 更新登录运营详情
+     */
+    public function actionUpdate($id)
+    {
+        $model = $this->findModel($id);
+
+        if ($model->load(Yii::$app->request->post())) {
+            $model->images = UploadedFile::getInstance($model, 'images');
+            $name=$model->images->baseName;
+            $image =  UploadedFile::getInstance($model,'images');
+            $ext = $image->getExtension();
+            $imageName = $name.'.'.$ext;
+            $path = Yii::$app->request->hostInfo.Yii::$app->request->baseUrl.'/';
+            $image->saveAs('operation/'.$imageName);
+            $model->images = $path.'operation/'.$imageName;
+
+            $model->save();
+            return $this->redirect(['view', 'id' => $model->id]);
+        } else {
+            return $this->render('create', [
+                'model' => $model,
+            ]);
+        }
+    }
+
+    /**
+     * Deletes an existing Operation model.
+     * If deletion is successful, the browser will be redirected to the 'index' page.
+     * @param integer $id
+     * @return mixed
+     * @desc 删除登录运营详情
+     */
+    public function actionDelete($id)
+    {
+        //删除数据库的内容后自动删除本地文件的相对应的图片
+        $model = $this->findModel($id);
+        if($model->images != NULL){
+            $names=$model->images;
+            $path = Yii::$app->request->hostInfo.Yii::$app->request->baseUrl.'/';
+            $leng= strlen($path);
+            $img_url=substr($names,$leng);
+            $url=realpath(dirname(__FILE__).'/../web').'/'.$img_url;
+            unlink($url);
+            $this->findModel($id)->delete();
+            return $this->redirect(['index']);
+        }else {
+            $this->findModel($id)->delete();
+
+            return $this->redirect(['index']);
+        }
+    }
+
+    /**
+     * Finds the Operation model based on its primary key value.
+     * If the model is not found, a 404 HTTP exception will be thrown.
+     * @param integer $id
+     * @return Operation the loaded model
+     * @throws NotFoundHttpException if the model cannot be found
+     */
+    protected function findModel($id)
+    {
+        if (($model = Operation::findOne($id)) !== null) {
+            return $model;
+        } else {
+            throw new NotFoundHttpException('The requested page does not exist.');
+        }
+    }
+}

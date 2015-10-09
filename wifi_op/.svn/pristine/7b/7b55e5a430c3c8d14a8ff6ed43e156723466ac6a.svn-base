@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/share_find_style.css">
+    </head>
+    <body>
+        <div class="nav">
+            <div class="icon-left" onclick="rePage()"><img src="images/back_left.png" width="30px";></div>
+            <div class="nav_content text-center">Find Free WiFi</div>
+        </div>
+        <div class="content">
+            <p>Just click the Free WiFi with orange key to connect.</p>
+            <img src="images/find_en_1.png">
+            <p>If there is no Free WiFi like that, click Map for more hotspots. Search WiFi with key and click for more detail. Then move to there and try to connect.</p>
+            <img src="images/find_en_2.jpg">
+            <p>Still no Free WiFi! Because no one has ever shared WiFi nearby. Just Share to be the first Sharer. By the way, share WiFi could also earn voucher pulsa for you. <a href="share_en.html">How to share?</a></p>
+        </div>
+        <div class="share_button" onclick="">Share WiFi Now</div>
+        <script>
+            function rePage(){
+                window.location.href="backapp://back";
+            }
+        </script>
+    </body>
+</html>

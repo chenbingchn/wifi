@@ -1,0 +1,54 @@
+<?php
+
+use \yii\helpers\Html;
+
+$sql = 'select * from image ORDER BY image.id DESC  limit 10 ';
+$q = Yii::$app->eladiesdb->createCommand($sql)->queryAll();
+
+?>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Eladies</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <style>
+        body{background-color:#F7E8DD;}
+        .cont{padding-bottom:3%;}
+        .key{display: none;}
+        .img{max-width:640px; box-shadow: 0 0 4px #000; padding:5px; background-color:#FFF; width:100%;}
+        #show{padding-top:5%;}
+    </style>
+</head>
+
+<body>
+<div id="div1" class="container cont">
+    <div class="row" align="center">
+        <?php foreach ($q as $k=>$v): ?>
+        <div id="show" class="col-md-12 col-sm-12 col-xs-12">
+            <div class="key"><?=Html::encode($v['id'])?></div>
+            <div class="images">
+                <img src="<?=Html::encode($v['url'])?>" class="img" />
+            </div>
+        </div>
+        <div class="clear">&nbsp;</div>
+        <?php endforeach; ?>
+    </div>
+</div>
+</body>
+<script type="application/javascript" src="js/down.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-66242547-3', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</html>

@@ -1,0 +1,854 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+li {
+  list-style: none;
+}
+img {
+  border: none;
+}
+a {
+  text-decoration: none;
+}
+body {
+  font-family: "微软雅黑";
+  font-size: 14px;
+  color: #666666;
+  margin: 0px;
+  padding: 0px;
+  background: #f6f6f6;
+}
+.nav {
+  width: 100%;
+  height: 46px;
+  line-height: 46px;
+  background: #3cab1f;
+  min-width: 320px;
+  overflow: hidden;
+}
+.nav .back {
+  width: 84px;
+  height: 46px;
+  background: url(../images/ico.png) no-repeat -616px -1px;
+  position: relative;
+  left: 0px;
+  top: 13px;
+}
+.nav .title {
+  min-width: 152px;
+  width: 100%;
+  height: 46px;
+  line-height: 46px;
+  color: #ffffff;
+  font-family: Arial;
+  font-weight: 700;
+  font-size: 16px;
+  text-align: center;
+  float: left;
+}
+.user {
+  width: 100%;
+  height: 52px;
+  min-width: 320px;
+  background: #FFFFFF;
+  overflow: hidden;
+}
+.user .login {
+  width: 100%;
+  height: 52px;
+  line-height: 52px;
+}
+.user .login .head {
+  width: 150px;
+  height: 52px;
+  padding-left: 30px;
+  line-height: 52px;
+  float: left;
+}
+.user .login .head span {
+  color: #000000;
+  float: left;
+  display: inline-block;
+}
+.user .login .head .login-ico {
+  width: 32px;
+  height: 32px;
+  background: url(../images/ico.png) no-repeat -269px -1px;
+  position: relative;
+  top: 11px;
+  left: -10px;
+  float: left;
+}
+.user .login .glod {
+  width: 120px;
+  height: 52px;
+  line-height: 52px;
+  float: right;
+}
+.user .login .glod .point {
+  width: 26px;
+  height: 26px;
+  background: url(../images/ico.png) no-repeat -398px -1px;
+  top: 13px;
+  left: 5px;
+  position: relative;
+  float: left;
+}
+.user .login .glod span {
+  text-indent: 10px;
+  display: inline-block;
+  font-family: Arial;
+  color: #666666;
+}
+.user .userinfo {
+  width: 100%;
+  height: 52px;
+  line-height: 52px;
+}
+.user .userinfo .head {
+  width: 150px;
+  height: 52px;
+  padding-left: 30px;
+  line-height: 52px;
+  float: left;
+  display: none;
+}
+.user .userinfo .head span {
+  color: #000000;
+  float: left;
+  display: inline-block;
+}
+.user .userinfo .head .login-ico {
+  width: 32px;
+  height: 32px;
+  border-radius: 15px;
+  position: relative;
+  top: 11px;
+  left: -10px;
+  float: left;
+}
+.user .userinfo .head .login-ico img {
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+  border-radius: 15px;
+}
+.user .userinfo .glod {
+  width: 120px;
+  height: 52px;
+  line-height: 52px;
+  float: right;
+}
+.user .userinfo .glod .point {
+  width: 26px;
+  height: 26px;
+  background: url(../images/ico.png) no-repeat -398px -1px;
+  top: 13px;
+  left: 5px;
+  position: relative;
+  float: left;
+}
+.user .userinfo .glod span {
+  text-indent: 10px;
+  display: inline-block;
+  font-family: Arial;
+  color: #000000;
+}
+.adimg {
+  background: #FFFFFF;
+}
+.adimg img {
+  width: 100%;
+  min-width: 320px;
+}
+.fail {
+  background: #666666;
+}
+.succe {
+  background: #3CAB1F;
+}
+@media screen and (min-width: 100px) and (max-width: 400px) {
+  .exchanged .content {
+    width: 99%;
+    margin-left: -6px;
+    height: 40px;
+    overflow: hidden;
+  }
+  .exchanged .content span {
+    font-size: 10px;
+  }
+}
+.exchanged {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  border-bottom: 1px solid #e0e3e7;
+  padding: 0px;
+  margin-top: -5px;
+  background: #FFFFFF;
+}
+.exchanged .history {
+  width: 49%;
+  min-width: 155px;
+  height: 40px;
+  line-height: 40px;
+  border-right: 1px solid #e0e3e7;
+  float: left;
+}
+.exchanged .history .content {
+  padding-left: 15px;
+}
+.exchanged .history .ico {
+  background: url(../images/ico.png) no-repeat -138px -1px;
+}
+.exchanged .history .loginedico {
+  background: url(../images/ico.png) no-repeat -449px -1px;
+}
+.exchanged .points {
+  float: right;
+  width: 49%;
+  min-width: 155px;
+  height: 40px;
+  line-height: 40px;
+}
+.exchanged .points .ico {
+  background: url(../images/ico.png) no-repeat -203px -1px;
+}
+.exchanged .points .loginedico {
+  background: url(../images/ico.png) no-repeat -486px -1px;
+}
+.exchanged .points .content {
+  padding-left: 10px;
+}
+.exchanged .content {
+  width: 98%;
+  min-width: 125px;
+  height: 40px;
+  line-height: 40px;
+  overflow: hidden;
+}
+.exchanged .content .ico {
+  width: 25px;
+  height: 25px;
+  overflow: hidden;
+  float: left;
+  position: relative;
+  top: 7px;
+}
+.exchanged .content .span {
+  color: #000000;
+  font-family: arial;
+  display: inline-block;
+  text-indent: 0px;
+  font-size: 12px;
+}
+@media screen and (min-width: 100px) and (max-width: 400px) {
+  .logined .content {
+    width: 99%;
+    margin-left: -6px;
+    height: 40px;
+    overflow: hidden;
+  }
+  .exchanged .content span {
+    font-size: 10px;
+  }
+}
+.logined {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  border-bottom: 1px solid #e0e3e7;
+  padding: 0px;
+  margin-top: -5px;
+  background: #FFFFFF;
+  display: none;
+}
+.logined .history {
+  width: 49%;
+  min-width: 155px;
+  height: 40px;
+  line-height: 40px;
+  border-right: 1px solid #e0e3e7;
+  float: left;
+}
+.logined .history .content {
+  padding-left: 15px;
+}
+.logined .history .ico {
+  background: url(../images/ico.png) no-repeat -449px -1px;
+}
+.logined .points {
+  float: right;
+  width: 49%;
+  min-width: 155px;
+  height: 40px;
+  line-height: 40px;
+}
+.logined .points .ico {
+  background: url(../images/ico.png) no-repeat -486px -1px;
+}
+.logined .points .content {
+  padding-left: 10px;
+}
+.logined .content {
+  width: 98%;
+  min-width: 125px;
+  height: 40px;
+  line-height: 40px;
+  overflow: hidden;
+}
+.logined .content .ico {
+  width: 25px;
+  height: 25px;
+  overflow: hidden;
+  float: left;
+  position: relative;
+  top: 7px;
+}
+.logined .content .span {
+  color: #000000;
+  font-family: arial;
+  display: inline-block;
+  text-indent: 0px;
+  font-size: 12px;
+}
+#content {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  margin-top: 10px;
+  background: #FFFFFF;
+}
+#content .title {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  border-bottom: 1px solid #e0e3e7;
+  border-top: 1px solid #e0e3e7;
+}
+#content .title .ico {
+  width: 19px;
+  height: 19px;
+  background: url(../images/ico.png) no-repeat -343px -1px;
+  position: relative;
+  top: 10px;
+  left: 10px;
+  float: left;
+}
+#content .title span {
+  color: #fb7c14;
+  text-indent: 20px;
+  display: inline-block;
+  font-family: arial;
+  font-size: 16;
+}
+#content .content {
+  width: 100%;
+  min-width: 320px;
+}
+#content .content ul {
+  width: 100%;
+  min-width: 320px;
+  float: left;
+  border-bottom: 1px solid #e0e3e7;
+}
+#content .content ul .container {
+  padding: 20px;
+  padding-bottom: 20px;
+  color: #000000;
+  font-size: 14px;
+  word-break: break-all;
+}
+#content .content ul .left {
+  float: left;
+  min-width: 120px;
+  width: 35%;
+  min-height: 70px;
+  max-height: 170px;
+  margin-left: 10px;
+  margin-top: 10px;
+  overflow: hidden;
+}
+#content .content ul .right {
+  float: right;
+  width: 55%;
+  min-width: 180px;
+  max-height: 170px;
+  min-height: 90px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+#content .content ul .right .title {
+  min-width: 160px;
+  width: 55%;
+  height: 30%;
+  line-height: 25px;
+  min-height: 25px;
+  max-height: 80px;
+  border: none;
+  font-size: 1em;
+}
+#content .content ul .right .title a {
+  font-size: 1em;
+  color: #000000;
+}
+#content .content ul .right .describe {
+  min-width: 160px;
+  width: 55%;
+  line-height: 30px;
+  height: 30px;
+  overflow: hidden;
+}
+#content .content ul .right .usecoin {
+  min-width: 160px;
+  width: 55%;
+  line-height: 20px;
+  height: 20px;
+}
+#content .content ul .right .usecoin .leftpoints {
+  float: left;
+  width: 45%;
+  line-height: 20px;
+  height: 20px;
+}
+#content .content ul .right .usecoin .leftpoints .ico {
+  width: 19px;
+  height: 19px;
+  background: url(../images/ico.png) no-repeat -602px -1px;
+  position: relative;
+  top: 3px;
+  left: 3px;
+  float: left;
+}
+#content .content ul .right .usecoin .leftpoints span {
+  display: inline-block;
+  float: left;
+  color: #fc7d16;
+  text-indent: 5px;
+}
+#content .content ul .right .usecoin .rightexchange {
+  width: 45%;
+  line-height: 20px;
+  height: 20px;
+  float: right;
+}
+#content .content ul .right .usecoin .rightexchange .goexchange {
+  width: 90px;
+  height: 30px;
+  position: relative;
+  display: inline-block;
+  right: 20px;
+  top: 0px;
+  border-radius: 5px;
+  line-height: 30px;
+  text-align: center;
+  color: #FFFFFF;
+}
+#content .content ul li {
+  float: left;
+}
+#content .content ul .img {
+  min-width: 75px;
+  width: 90%;
+  max-height: 170px;
+  overflow: hidden;
+}
+#content .content ul .img img {
+  max-height: 160px;
+  width: 100%;
+}
+@media screen and (min-width: 480px) and (max-width: 570px) {
+  #content .content ul .right {
+    float: right;
+    width: 55%;
+    min-width: 180px;
+    max-height: 170px;
+    min-height: 90px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+  #content .content ul .right .title {
+    min-width: 160px;
+    width: 55%;
+    height: 50px;
+    line-height: 50px;
+    border: none;
+    font-size: 20px;
+  }
+  #content .content ul .right .title a {
+    font-size: 1em;
+    color: #000000;
+  }
+  #content .content ul .right .describe {
+    min-width: 160px;
+    width: 55%;
+    line-height: 20px;
+    height: 20px;
+    overflow: hidden;
+  }
+  #content .content ul .right .usecoin {
+    min-width: 160px;
+    width: 98%;
+    line-height: 20px;
+    height: 20px;
+  }
+  #content .content ul .right .usecoin .leftpoints {
+    float: left;
+    width: 45%;
+    line-height: 20px;
+    height: 20px;
+  }
+  #content .content ul .right .usecoin .leftpoints .ico {
+    width: 19px;
+    height: 19px;
+    background: url(../images/ico.png) no-repeat -602px -1px;
+    position: relative;
+    top: 3px;
+    left: 3px;
+    float: left;
+  }
+  #content .content ul .right .usecoin .leftpoints span {
+    display: inline-block;
+    float: left;
+    color: #fc7d16;
+    text-indent: 5px;
+  }
+  #content .content ul .right .usecoin .rightexchange {
+    width: 55%;
+    line-height: 20px;
+    height: 20px;
+    float: right;
+  }
+  #content .content ul .right .usecoin .rightexchange .goexchange {
+    width: 100%;
+    height: 30px;
+    position: relative;
+    display: inline-block;
+    right: 20px;
+    top: 0px;
+    border-radius: 5px;
+    line-height: 30px;
+    text-align: center;
+    color: #FFFFFF;
+  }
+}
+@media screen and (min-width: 570px) and (max-width: 718px) {
+  #content .content ul .right {
+    float: right;
+    width: 55%;
+    min-width: 180px;
+    max-height: 170px;
+    min-height: 90px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+  #content .content ul .right .title {
+    min-width: 160px;
+    width: 55%;
+    height: 40px;
+    line-height: 40px;
+    border: none;
+    font-size: 26px;
+  }
+  #content .content ul .right .title a {
+    font-size: 1em;
+    color: #000000;
+  }
+  #content .content ul .right .describe {
+    min-width: 160px;
+    width: 55%;
+    line-height: 20px;
+    height: 20px;
+    overflow: hidden;
+  }
+  #content .content ul .right .usecoin {
+    margin-top: 10px;
+    min-width: 160px;
+    width: 98%;
+    line-height: 20px;
+    height: 20px;
+  }
+  #content .content ul .right .usecoin .leftpoints {
+    float: left;
+    width: 45%;
+    line-height: 20px;
+    height: 20px;
+  }
+  #content .content ul .right .usecoin .leftpoints .ico {
+    width: 19px;
+    height: 19px;
+    background: url(../images/ico.png) no-repeat -602px -1px;
+    position: relative;
+    top: 3px;
+    left: 3px;
+    float: left;
+  }
+  #content .content ul .right .usecoin .leftpoints span {
+    display: inline-block;
+    float: left;
+    color: #fc7d16;
+    text-indent: 5px;
+  }
+  #content .content ul .right .usecoin .rightexchange {
+    width: 55%;
+    line-height: 20px;
+    height: 20px;
+    float: right;
+  }
+  #content .content ul .right .usecoin .rightexchange .goexchange {
+    width: 100%;
+    height: 40px;
+    position: relative;
+    display: inline-block;
+    right: 20px;
+    top: 0px;
+    border-radius: 5px;
+    line-height: 40px;
+    text-align: center;
+    color: #FFFFFF;
+  }
+}
+@media screen and (min-width: 719px) and (max-width: 1980px) {
+  #content .content ul .right {
+    float: right;
+    width: 55%;
+    min-width: 180px;
+    max-height: 170px;
+    min-height: 90px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+  #content .content ul .right .title {
+    min-width: 160px;
+    width: 55%;
+    height: 50px;
+    line-height: 50px;
+    border: none;
+    font-size: 20px;
+  }
+  #content .content ul .right .title a {
+    color: #000000;
+    font-size: 26px;
+  }
+  #content .content ul .right .describe {
+    min-width: 160px;
+    width: 55%;
+    line-height: 40px;
+    height: 40px;
+    overflow: hidden;
+    font-size: 16px;
+  }
+  #content .content ul .right .usecoin {
+    margin-top: 10px;
+    min-width: 160px;
+    width: 98%;
+    line-height: 26px;
+    height: 26px;
+  }
+  #content .content ul .right .usecoin .leftpoints {
+    float: left;
+    width: 45%;
+    line-height: 20px;
+    height: 20px;
+  }
+  #content .content ul .right .usecoin .leftpoints .ico {
+    width: 26px;
+    height: 26px;
+    background: url(../images/ico.png) no-repeat -398px -1px;
+    position: relative;
+    top: -3px;
+    left: 3px;
+    float: left;
+  }
+  #content .content ul .right .usecoin .leftpoints span {
+    display: inline-block;
+    float: left;
+    color: #fc7d16;
+    text-indent: 5px;
+  }
+  #content .content ul .right .usecoin .rightexchange {
+    width: 55%;
+    line-height: 20px;
+    height: 20px;
+    float: right;
+  }
+  #content .content ul .right .usecoin .rightexchange .goexchange {
+    width: 100%;
+    height: 45px;
+    position: relative;
+    display: inline-block;
+    right: 20px;
+    top: 0px;
+    border-radius: 5px;
+    line-height: 45px;
+    text-align: center;
+    color: #FFFFFF;
+  }
+}
+.award {
+  width: 100%;
+  height: 130px;
+  margin-top: -5px;
+  border-bottom: 1px solid #e0e3e7;
+  background: #FFFFFF;
+}
+.award ul {
+  width: 90%;
+  height: 130px;
+  margin: 0px auto;
+  padding-top: 10px;
+}
+.award ul li {
+  float: left;
+}
+.award ul .awardtitleleft {
+  width: 50%;
+  height: 50px;
+  line-height: 50px;
+  text-align: left;
+  font-size: 22px;
+}
+.award ul .awardtitleright {
+  width: 50%;
+  float: right;
+  line-height: 50px;
+  height: 50px;
+  text-align: right;
+  font-size: 18px;
+  color: #fb7c14;
+}
+.award ul .awardoldprice {
+  width: 100%;
+  height: 20px;
+  line-height: 20px;
+  text-align: right;
+  position: relative;
+  top: -10px;
+  color: #666666;
+}
+.award ul .awarddate {
+  width: 100%;
+  height: 50px;
+  overflow: hidden;
+  line-height: 50px;
+  text-align: left;
+  font-size: 16px;
+}
+@media screen and (min-width: 100px) and (max-width: 350px) {
+  .award ul .awarddate {
+    font-size: 12px;
+  }
+}
+.active {
+  width: 100%;
+  height: 80px;
+  background: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  bottom: 0px;
+}
+.active .botton {
+  width: 80%;
+  height: 60px;
+  border-radius: 5px;
+  background: #3cab1f;
+  margin: 0px auto;
+  margin-top: 10px;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 26px;
+  line-height: 60px;
+  font-family: arial;
+}
+.cover {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #000000;
+  opacity: 0.6;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  display: none;
+}
+.alert {
+  display: none;
+  position: fixed;
+  background-color: white;
+  top: 30%;
+  left: 10%;
+  width: 80%;
+  z-index: 10000;
+  border-radius: 15px;
+}
+.alert .title {
+  color: #1c8a00;
+  font-family: arial;
+  font-size: 16px;
+  text-align: center;
+  height: 50px;
+  line-height: 50px;
+  border-bottom: 1px solid #1c8a00;
+  position: relative;
+}
+.alert .title .close {
+  width: 25px;
+  height: 25px;
+  background: url(../images/ico.png) no-repeat right -48px;
+  float: left;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+.alert .content {
+  width: 80%;
+  min-height: 80px;
+  line-height: 30px;
+  margin: 0 auto;
+  padding-bottom: 20px;
+}
+.alert .content .goosname {
+  color: #fa722c;
+}
+.alert .content .okalert {
+  display: none;
+}
+.alert .content .checkbtn {
+  width: 80%;
+  height: 40px;
+  line-height: 60px;
+  margin: 10px auto;
+  border-radius: 5px;
+  background: #63b002;
+  text-align: center;
+  color: #FFFFFF;
+  line-height: 40px;
+}
+.alert .content .tipsbtn {
+  width: 80%;
+  line-height: 40px;
+  height: 40px;
+  margin: 0 auto;
+  text-align: center;
+  color: #FFFFFF;
+}
+.alert .content .tipsbtn .sure {
+  width: 45%;
+  height: 40px;
+  border-radius: 5px;
+  background: #63b002;
+  float: left;
+}
+.alert .content .tipsbtn .quit {
+  width: 45%;
+  height: 40px;
+  border-radius: 5px;
+  background: #63b002;
+  float: left;
+  margin-left: 10%;
+}
+/*# sourceMappingURL=content.css.map */

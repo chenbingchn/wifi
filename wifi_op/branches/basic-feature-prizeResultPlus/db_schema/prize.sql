@@ -1,0 +1,75 @@
+-- phpMyAdmin SQL Dump
+-- version 4.1.14
+-- http://www.phpmyadmin.net
+--
+-- Host: 127.0.0.1
+-- Generation Time: 2015-09-28 09:58:51
+-- 服务器版本： 5.6.17
+-- PHP Version: 5.5.12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- Database: `wifi`
+--
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `prize`
+--
+
+CREATE TABLE IF NOT EXISTS `prize` (
+  `id` int(5) NOT NULL AUTO_INCREMENT,
+  `mobile` varchar(11) NOT NULL,
+  `type` int(1) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `mobile` (`mobile`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=40 ;
+
+--
+-- 转存表中的数据 `prize`
+--
+
+INSERT INTO `prize` (`id`, `mobile`, `type`) VALUES
+(2, '15210566360', 2),
+(3, '15326985471', 2),
+(4, '14798523697', 3),
+(6, '15236565555', 3),
+(7, '15898652369', 1),
+(8, '14799663655', 2),
+(9, '16985555454', 2),
+(10, '15213698552', 2),
+(11, '13698547895', 2),
+(12, '13698541010', 1),
+(13, '16985425565', 3),
+(14, '15213698547', 3),
+(15, '12598363544', 3),
+(16, '18996145866', 1),
+(17, '15478966555', 3),
+(18, '14956547744', 1),
+(19, '16985236984', 1),
+(20, '16900321458', 3),
+(21, '15847893695', 1),
+(25, '12332112332', 1),
+(27, '14789652369', 1),
+(31, '13698521479', 2),
+(32, '13958471369', 3),
+(33, '13698741250', 2),
+(34, '18513852359', 1),
+(35, '12036985214', 3),
+(36, '15890021401', 2),
+(37, '14710011001', 1),
+(38, '14758952369', 2),
+(39, '10888888888', 1);
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

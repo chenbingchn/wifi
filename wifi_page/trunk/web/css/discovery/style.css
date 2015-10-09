@@ -1,0 +1,73 @@
+@charset "utf-8";
+body {
+    width: 100%;
+}
+/*导航*/
+#nav{
+    position:relative;
+    padding-left: 0;
+    padding-right: 0;
+    background-color: #EEEEEE;
+    height: 40px;
+    text-align: center;
+}
+.nav {
+    position:relative;
+    padding-top: 10px;
+    height:40px;
+}
+.nav li {
+    float:left;
+    display:inline;
+    height:26px;
+    line-height:26px;
+    width: 20%;
+}
+.nav li span,
+.nav li a {
+    padding:0 10px;
+    font-size:14px;
+    color:#6b6b6b;
+    font-weight:700;
+    text-decoration:none;
+}
+.nav li a:hover {
+    text-decoration:none;
+}
+.nav li.cur a {
+    color:#329519;
+    width:100px;
+}
+.nav .nav-line {
+    position:absolute;
+    border-bottom:2px solid #329519;
+    height:0;
+    overflow:hidden;
+    left:0;
+    bottom:0;
+    width: 20%;
+}
+.container{
+    padding: 0;
+    margin: 0 auto;
+    width:100%;
+}
+a:link, a:visited {
+    text-decoration: none;
+    color: #000;
+}
+.banners {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 9999;
+    width: 100%;
+}
+.close-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 10000;
+    margin: auto 10px;
+}

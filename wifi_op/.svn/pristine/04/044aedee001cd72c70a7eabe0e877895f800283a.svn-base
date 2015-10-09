@@ -1,0 +1,1 @@
+alter table `article` add `minVersion` int(11) ;

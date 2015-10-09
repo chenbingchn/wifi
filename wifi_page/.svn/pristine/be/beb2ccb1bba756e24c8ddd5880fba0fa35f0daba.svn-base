@@ -1,0 +1,13 @@
+<?php
+	$lang['title'] = 'Bagaimana untuk berbagi WIFi?';
+	$lang['p1'] = '1. Setelah Anda terhubung dengan hotspot WiFi, Klik Share WiFi/Berbagi WiFi untuk share WiFi password.';
+	$lang['p2'] ='Anda akan mendapatkan 100 poin setelah share sukses. Klik ke WiFi Yang Udah Saya Share untuk cek WiFi yang sudah anda share.';
+	$lang['p3'] = '2. Anda juga bisa mencari WiFi di WiFi Yang Butuh Password. Klik ke klik to share Win voucher pulsa.';
+	$lang['p4'] = 'Masukkan password WiFi dan tunggu hingga terhubung. Setelah sukses terhubung, Anda akan mendapatkan 100 poin. Cari lebih banyak WiFi di kolom WiFi Yang Butuh Password dan dapatkan lebih banyak poin.';
+	$lang['p5'] = '3. Pengguna lain terhubung ke WiFi hotspot dibagi oleh Anda, Anda akan mendapatkan 50 poin untuk setiap konektor baru. Poin akan terbatas pada 1000 Poin untuk per hotspot WiFi pada setiap hari.';
+	$lang ['img1'] = config_item('base_url') . 'images/share_id_1.jpg';
+	$lang ['img2'] = config_item('base_url') . 'images/share_id_2.jpg';
+	$lang ['img3'] = config_item('base_url') . 'images/share_id_3.jpg';
+	$lang ['img4'] = config_item('base_url') . 'images/share_id_4.jpg';
+	$lang['button'] = 'Share WiFi';
+?>
