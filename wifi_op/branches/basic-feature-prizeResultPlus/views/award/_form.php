@@ -7,7 +7,7 @@ use app\models\AwardType;
 /* @var $this yii\web\View */
 /* @var $model app\models\Award */
 /* @var $form yii\widgets\ActiveForm */
-$row=AwardType::find()->all();
+$row=Award::find()->all();
 foreach ($row as $k => $v) {
     $type_code[$v['award_type']] = $v['award_type'];
     $type_en[$v['award_type']] = $v['award_type_en'];

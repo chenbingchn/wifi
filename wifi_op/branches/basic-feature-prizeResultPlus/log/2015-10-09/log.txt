@@ -20,3 +20,6 @@
 [2015-10-09 07:06:57] user::11 GET /project/wifi/wifi_op/branches/basic-feature-prizeResultPlus/web/index.php?r=categorys/index  params::a:0:{} 
 [2015-10-09 07:13:06] user::11 GET /project/wifi/wifi_op/branches/basic-feature-prizeResultPlus/web/index.php?r=article%2Findex  params::a:0:{} 
 [2015-10-09 07:13:08] user::11 GET /project/wifi/wifi_op/branches/basic-feature-prizeResultPlus/web/index.php?r=article%2Findex  params::a:0:{} 
+[2015-10-09 07:36:40] user::11 GET /project/wifi/wifi_op/branches/basic-feature-prizeResultPlus/web/index.php?r=article%2Findex  params::a:0:{} 
+[2015-10-09 07:49:39] user::11 GET /project/wifi/wifi_op/branches/basic-feature-prizeResultPlus/web/index.php?r=article%2Findex  params::a:0:{} 
+[2015-10-09 07:51:15] user::11 GET /project/wifi/wifi_op/branches/basic-feature-prizeResultPlus/web/index.php?r=article%2Findex  params::a:0:{} 
