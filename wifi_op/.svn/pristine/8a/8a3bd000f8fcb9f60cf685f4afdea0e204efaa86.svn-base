@@ -1,0 +1,105 @@
+<?php
+
+use yii\helpers\Html;
+use yii\bootstrap\Nav;
+use yii\bootstrap\NavBar;
+use yii\widgets\Breadcrumbs;
+use app\assets\AppAsset;
+
+/* @var $this \yii\web\View */
+/* @var $content string */
+
+AppAsset::register($this);
+?>
+<?php $this->beginPage() ?>
+<!DOCTYPE html>
+<html lang="<?= Yii::$app->language ?>">
+    <head>
+        <meta charset="<?= Yii::$app->charset ?>">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <?= Html::csrfMetaTags() ?>
+        <title><?= Html::encode($this->title) ?></title>
+<?php $this->head() ?>
+    </head>
+    <body>
+
+            <?php $this->beginBody() ?>
+        <div class="wrap">
+            <?php
+            NavBar::begin([
+                'brandLabel' => 'My Company',
+                'brandUrl' => Yii::$app->homeUrl,
+                'options' => [
+                    'class' => 'navbar-inverse navbar-fixed-top',
+                ],
+            ]);
+            $menuItems = [
+                '<li class="dropdown">',
+                '<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">菜单目录<span class="caret"></span></a>',
+                '<ul class="dropdown-menu" role="menu">',
+                '<li><a href="' . $_SERVER['PHP_SELF'] . '?r=article/index">赚积分</a></li>',
+                '<li><a href="' . $_SERVER['PHP_SELF'] . '?r=activity/index">消息中心</a></li>',
+                '<li><a href="' . $_SERVER['PHP_SELF'] . '?r=events/index">活动内容</a></li>',
+                '<li><a href="' . $_SERVER['PHP_SELF'] . '?r=integral/index">积分商城</a></li>',
+                '<li><a href="' . $_SERVER['PHP_SELF'] . '?r=integralcategory/index">积分商城分类</a></li>',
+                '<li><a href="' . $_SERVER['PHP_SELF'] . '?r=categorys/index">发现页小类别</a></li>',
+                '<li><a href="' . $_SERVER['PHP_SELF'] . '?r=mainclass/index">发现页大类别</a></li>',
+                '<li><a href="' . $_SERVER['PHP_SELF'] . '?r=scoreconfig/index">积分配置界面</a></li>',
+                '<li><a href="' . $_SERVER['PHP_SELF'] . '?r=findcontent/index">发现页icon</a></li>',
+                '<li><a href="' . $_SERVER['PHP_SELF'] . '?r=push/index">推送页</a></li>',
+                '<li><a href="' . $_SERVER['PHP_SELF'] . '?r=raiders/index">积分攻略</a></li>',
+                '<li><a href="' . $_SERVER['PHP_SELF'] . '?r=share/index">首页下标题</a></li>',
+                '<li><a href="' . $_SERVER['PHP_SELF'] . '?r=sharedwifipage/index">首页分享WiFi页</a></li>',
+                '<li><a href="' . $_SERVER['PHP_SELF'] . '?r=banner/index">App Banner</a></li>',
+                '<li><a href="' . $_SERVER['PHP_SELF'] . '?r=integralrecord/index">积分商城兑换流水</a></li>',
+                '<li><a href="' . $_SERVER['PHP_SELF'] . '?r=account/index">用户信息</a></li>',
+                '<li><a href="' . $_SERVER['PHP_SELF'] . '?r=account/scorestream">积分流水</a></li>',
+                '<li><a href="' . $_SERVER['PHP_SELF'] . '?r=feedback/index">feedBack详情页</a></li>',
+                '<li><a href="' . $_SERVER['PHP_SELF'] . '?r=account/wifi">分享的wifi热点</a></li>',
+                '<li><a href="' . $_SERVER['PHP_SELF'] . '?r=wifistatistics/index">WiFi统计信息表</a></li>',
+                '<li><a href="' . $_SERVER['PHP_SELF'] . '?r=push/list">GCM Push</a></li>',
+                '<li><a href="' . $_SERVER['PHP_SELF'] . '?r=prize/index">WiFi抽奖</a></li>',
+                '<li><a href="' . $_SERVER['PHP_SELF'] . '?r=award/index">WiFi抽奖（新）</a></li>',
+                '<li><a href="' . $_SERVER['PHP_SELF'] . '?r=auth/role">角色列表</a></li>',
+                '<li><a href="' . $_SERVER['PHP_SELF'] . '?r=auth/permission">操作列表</a></li>',
+                '<li><a href="' . $_SERVER['PHP_SELF'] . '?r=auth/userlist">用户列表</a></li>',
+                '</ul>',
+                '</li>',
+            ];
+            if (Yii::$app->user->isGuest) {
+                $menuItems[] = ['label' => '登录', 'url' => ['/site/login']];
+            } else {
+                $menuItems[] = [
+                    'label' => 'Logout (' . Yii::$app->user->identity->username . ')',
+                    'url' => ['/site/logout'],
+                    'linkOptions' => ['data-method' => 'post']
+                ];
+            }
+            echo Nav::widget([
+                'options' => ['class' => 'navbar-nav navbar-right'],
+                'items' => $menuItems,
+            ]);
+            NavBar::end();
+            ?>
+
+            <div class="container">
+                <?=
+                Breadcrumbs::widget([
+                    'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+                ])
+                ?>
+<?= $content ?>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
+                <p class="pull-right"><?= Yii::powered() ?></p>
+            </div>
+        </footer>
+
+<?php $this->endBody() ?>
+    </body>
+</html>
+<?php $this->endPage() ?>
